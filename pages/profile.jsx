@@ -1,0 +1,101 @@
+import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
+import CustomLayout from "../components/Layout/CustomLayout";
+import UserAlerts from "../components/Profile/UserAlert/UserAlerts";
+import UserDataProfile from "../components/Profile/UserData/UserData";
+import WarningMessage from "../components/Profile/UserData/WarningMessage";
+import UserPassword from "../components/Profile/UserPassword/UserPassword";
+
+import UserAlertModel from "../models/UserAlertModel";
+import AuthService from "../services/AuthService";
+import CookieService from "../services/CookieService";
+import { ServiceContext } from "./_app";
+
+export default function MyProfile({ userData }) {
+  const { authService, userService } = useContext(ServiceContext);
+  const router = useRouter();
+
+  const [alertsList, setAlertsList] = useState([]);
+  const validateUserData = async () => {
+    try {
+      if (userData === null) {
+        authService.logout();
+        router.push("/login");
+        return;
+      }
+    } catch (err) {
+      authService.logout();
+      router.push("/login");
+      return;
+    }
+  };
+
+  const getUserWatches = async () => {
+    const token = CookieService.getCookie("StockFinder");
+    const response = await userService.getUserWatches(token);
+    if (!response.ok) {
+    }
+    const data = await response.json();
+    setAlertsList(data.products ? data.products.map((item) => new UserAlertModel(item)) : []);
+  };
+
+  useEffect(() => {
+    validateUserData();
+    getUserWatches();
+  }, []);
+  const active_telegram = userData?.telegram ? true : false
+
+  return (
+    <CustomLayout userData={userData} title_text={false}>
+      <div className="text-neutral-200 mx-2 sm:mx-10">
+
+        <h3 className="text-3xl font-semibold text-center">Panel de usuario</h3>
+        <div className="section-title-separator bg-blue-500 w-16 sm:w-32 rounded-full mt-1 mb-4 h-2 mx-auto"></div>
+
+        <WarningMessage userData={userData}></WarningMessage>
+
+        <div className="flex gap-4">
+          <div className="w-52 hidden lg:block">
+            <UserDataProfile userData={userData}></UserDataProfile>
+            <div className="mx-12 border-b"></div>
+
+            {active_telegram && (<div className="my-4 mx-8">
+              <button className="btn-blue-white" onClick={(e) => router.push("/profile/new-alert")}>Nueva alerta</button>
+            </div>)}
+
+            <div className="mx-12 border-b"></div>
+            <UserPassword userData={userData}></UserPassword>
+          </div>
+
+          <div className="grid">
+            <div className="sm:mx-36 lg:hidden">
+              <UserDataProfile userData={userData}></UserDataProfile>
+            </div>
+            <div className="mx-auto w-32 border-b border-neutral-300 lg:hidden"></div>
+
+            <div className="my-2">
+              <UserAlerts alerts={alertsList} userData={userData}></UserAlerts>
+            </div>
+
+            {active_telegram && (<div className="my-2 w-36 mx-auto lg:hidden">
+              <button className="btn-blue-white" onClick={(e) => router.push("/profile/new-alert")}>Nueva alerta</button>
+            </div>)}
+
+            <div className="sm:mx-36 lg:hidden">
+              <UserPassword userData={userData}></UserPassword>
+            </div>
+          </div>
+        </div>
+      </div>
+    </CustomLayout>
+  );
+}
+
+// Server side rendering
+export async function getServerSideProps(context) {
+  let authService = new AuthService();
+  const result = await authService.validateCookie(context);
+  let userData = null;
+  if (!result.error) userData = result.userData;
+  return { props: { userData } };
+}
