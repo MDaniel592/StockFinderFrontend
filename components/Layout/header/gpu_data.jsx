@@ -87,7 +87,13 @@ export const generations = [
         name: "RX7900XT",
         href: "/stock/RX7900XT",
         img: "/images/categories/RX6000.webp",
-      },],
+      },      
+      {
+        name: "RX7600",
+        href: "/stock/RX7600",
+        img: "/images/categories/RX6000.webp",
+      },
+    ],
   },
   {
     name: "RTX 3000",

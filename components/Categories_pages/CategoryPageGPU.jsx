@@ -72,7 +72,7 @@ export default function CategoryPageCPUCooler({ data_recv }) {
     "GeForce RTX 3080 12GB": false, "GeForce RTX 3080 Ti": false, "GeForce RTX 3090": false, "GeForce RTX 3090 LHR": false,
     "GeForce RTX 3090 Ti": false,
     // AMD
-    "Radeon RX 7900 XTX": false, "Radeon RX 7900 XT": false,
+    "Radeon RX 7900 XTX": false, "Radeon RX 7900 XT": false, "Radeon RX 7600": false,
     "Radeon RX 6600": false, "Radeon RX 6600 XT": false, "Radeon RX 6700": false, "Radeon RX 6700 XT": false,
     "Radeon RX 6800": false, "Radeon RX 6800 XT": false, "Radeon RX 6900 XT": false,
   };
@@ -84,7 +84,7 @@ export default function CategoryPageCPUCooler({ data_recv }) {
     "GeForce RTX 3080 12GB": false, "GeForce RTX 3080 Ti": false, "GeForce RTX 3090": false, "GeForce RTX 3090 LHR": false,
     "GeForce RTX 3090 Ti": false,
     // AMD
-    "Radeon RX 7900 XTX": true, "Radeon RX 7900 XT": true,
+    "Radeon RX 7900 XTX": true, "Radeon RX 7900 XT": true, "Radeon RX 7600": false,
     "Radeon RX 6600": false, "Radeon RX 6600 XT": false, "Radeon RX 6700": false, "Radeon RX 6700 XT": false,
     "Radeon RX 6800": false, "Radeon RX 6800 XT": true, "Radeon RX 6900 XT": false,
   }

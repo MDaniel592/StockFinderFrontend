@@ -4,7 +4,7 @@ import CustomLayout from "../../components/Layout/CustomLayout";
 import StockPage from "../../components/Stock/StockPage";
 import AuthService from "../../services/AuthService";
 // import { ALLOWED_MVIDIA, ALLOWED_AMD } from "../../utils/Database";
-const ALLOWED_AMD = ['RX6400', "RX6500XT", "RX6600", "RX6600XT", "RX6650XT", "RX6700", "RX6700XT", "RX6750XT", "RX6800", "RX6800XT", "RX6900XT", "RX6950XT", "RX7900XT", "RX7900XTX"];
+const ALLOWED_AMD = ['RX6400', "RX6500XT", "RX6600", "RX6600XT", "RX6650XT", "RX6700", "RX6700XT", "RX6750XT", "RX6800", "RX6800XT", "RX6900XT", "RX6950XT", "RX7600", "RX7900XT", "RX7900XTX"];
 const ALLOWED_MVIDIA = ["RTX3050", "RTX3060", "RTX3060TI", "RTX3070", "RTX3070TI", "RTX3080", "RTX3080TI", "RTX3090", "RTX3090TI", 'RTX4060TI', 'RTX4070', 'RTX4070TI', "RTX4080", "RTX4090"];
 
 /*
