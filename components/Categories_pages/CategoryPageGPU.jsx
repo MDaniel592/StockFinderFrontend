@@ -66,7 +66,7 @@ export default function CategoryPageCPUCooler({ data_recv }) {
   // Chipset
   const socketDefault = {
     // NVIDIA
-    "GeForce RTX 4090": false, "GeForce RTX 4080": false, "GeForce RTX 4070 Ti": false, "GeForce RTX 4070": false,
+    "GeForce RTX 4090": false, "GeForce RTX 4080": false, "GeForce RTX 4070 Ti": false, "GeForce RTX 4070": false, "GeForce RTX 4060 Ti": false, 
     "GeForce RTX 3060": false, "GeForce RTX 3060 Ti": false, "GeForce RTX 3060 Ti LHR": false, "GeForce RTX 3070": false,
     "GeForce RTX 3070 LHR": false, "GeForce RTX 3070 Ti": false, "GeForce RTX 3080 10GB": false, "GeForce RTX 3080 10GB LHR": false,
     "GeForce RTX 3080 12GB": false, "GeForce RTX 3080 Ti": false, "GeForce RTX 3090": false, "GeForce RTX 3090 LHR": false,
@@ -78,7 +78,7 @@ export default function CategoryPageCPUCooler({ data_recv }) {
   };
   const defaultSocketList = {
     // NVIDIA
-    "GeForce RTX 4090": true, "GeForce RTX 4080": true, "GeForce RTX 4070 Ti": false, "GeForce RTX 4070": false,
+    "GeForce RTX 4090": true, "GeForce RTX 4080": true, "GeForce RTX 4070 Ti": false, "GeForce RTX 4070": false, "GeForce RTX 4060 Ti": false, 
     "GeForce RTX 3060": false, "GeForce RTX 3060 Ti": false, "GeForce RTX 3060 Ti LHR": true, "GeForce RTX 3070": false,
     "GeForce RTX 3070 LHR": false, "GeForce RTX 3070 Ti": false, "GeForce RTX 3080 10GB": false, "GeForce RTX 3080 10GB LHR": false,
     "GeForce RTX 3080 12GB": false, "GeForce RTX 3080 Ti": false, "GeForce RTX 3090": false, "GeForce RTX 3090 LHR": false,

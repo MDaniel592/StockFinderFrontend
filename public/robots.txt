@@ -1,0 +1,17 @@
+###########################################################
+#
+# Bienvenido a Robots.txt de stockfinder.tech
+#
+##########################################################
+
+# Block all crawlers for /api
+User-agent: *
+Disallow: /api
+
+# Block all crawlers for /profile
+User-agent: *
+Disallow: /profile
+
+# Allow all crawlers
+User-agent: *
+Allow: /

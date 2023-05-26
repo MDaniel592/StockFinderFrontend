@@ -66,6 +66,12 @@ export const generations = [
         href: "/stock/RTX4070",
         img: "/images/components/GV-Gaming.webp",
       }
+      ,
+      {
+        name: "RTX4060TI",
+        href: "/stock/RTX4060TI",
+        img: "/images/components/GV-Gaming.webp",
+      }
     ]
   },
   {
