@@ -20,9 +20,9 @@ export default function AlertManagement({ products, category }) {
 
 
     function popUpAlert() {
-        if (productAlert === undefined) return
+        if (productAlert === undefined) return;
         // if (isRefreshEnabled) setIsRefreshEnabled(false);
-
+        if (typeof Audio === "undefined") return;
         const audio = new Audio('/message_received_whatsapp.mp3');
         audio.volume = 1.0
         audio.play();
