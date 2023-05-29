@@ -39,6 +39,16 @@ function filter_item(filters, item_key, item_data) {
 }
 
 
+
+export function getProductAlert(products, alert) {
+    // const alertShop = alert?.shop;
+    const alertMaxPrice = parseFloat(alert?.maxPrice);
+    if (alertMaxPrice === NaN) return;
+    return parseFloat(products[0].price) < alertMaxPrice ? products[0] : undefined
+}
+
+
+
 export function filter_data(data, filters, searchValue, tableLen, setTableLen) {
     let new_array = [];
     for (var index in data) {

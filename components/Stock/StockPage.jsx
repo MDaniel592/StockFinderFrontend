@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import VerticalFloatingFilters from "../Sidebar/VerticalFloatingFilters";
 import PaginatedItems from "../Tables/Pagination";
 import TableHeader from "../Tables/TableHeader";
+import AlertManagement from "./AlertManagement";
 import { filter_data } from "./FilterFunction";
 import ProductList from "./ProductList";
 
@@ -143,6 +144,9 @@ export default function StockPage({ data_recv, category }) {
       <h3 className="text-3xl font-semibold text-center">Listado de {category}</h3>
       <div className="section-title-separator bg-blue-500 w-16 sm:w-32 rounded-full mt-1 mb-4 h-2 mx-auto"></div>
 
+      <div name="stockForm" className="flex justify-center">
+        <AlertManagement products={data_recv["products"]} category={category} />
+      </div>
 
       <div name="filters" className="flex justify-center">
         <VerticalFloatingFilters name="Filtros" data_list={data_list} data_slider={data_slider} />
