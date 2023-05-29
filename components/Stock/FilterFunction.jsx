@@ -44,7 +44,9 @@ export function getProductAlert(products, alert) {
     // const alertShop = alert?.shop;
     const alertMaxPrice = parseFloat(alert?.maxPrice);
     if (alertMaxPrice === NaN) return;
-    return parseFloat(products[0].price) < alertMaxPrice ? products[0] : undefined
+    // The array of products is NOT ordered, however we will take a random one which satisfy the condition
+    var productAlert = products.filter(product => parseFloat(product.price) < alertMaxPrice)
+    return productAlert ? productAlert[0] : undefined;
 }
 
 
