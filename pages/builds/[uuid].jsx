@@ -1,12 +1,12 @@
 import React from "react";
-import Custom404 from "../../components/404";
 import BuildPage from "../../components/Builder/BuildPage";
 import CustomLayout from "../../components/Layout/CustomLayout";
+import Page404 from "../../components/Page404";
 import AuthService from "../../services/AuthService";
 
 // Easy, we receive the UUID as link parameter** and we used it to retrieve the product's data
 export default function Home({ data, userData, build_uuid }) {
-    if (Object.keys(data).length === 0) return <Custom404 />;
+    if (Object.keys(data).length === 0) return <Page404 />;
 
     return (
         <React.Fragment>

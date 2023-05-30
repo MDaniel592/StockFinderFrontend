@@ -5,9 +5,9 @@ import AuthService from "../services/AuthService";
 export default function PoliticaPrivacidad({ userData }) {
   return (
     <CustomLayout userData={userData} title_text={false}>
-      <section>
+      <section className="default-w-space text-xs">
         <div className="mx-auto text-justify">
-          <h1 className="text-4xl">Política de Privacidad</h1>
+          <h1 className="text-3xl">Política de Privacidad</h1>
           <div className="section-title-separator bg-blue-800 w-8 rounded-full mt-1 mb-4 h-2"></div>
           <section className="mt-4">
             <p>

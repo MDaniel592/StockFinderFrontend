@@ -1,5 +1,5 @@
 
-function defaults_item_data(item_key, data) {
+function defaultsItemData(item_key, data) {
   let item_data = data[item_key];
 
   // Defaults
@@ -120,7 +120,7 @@ function filter_item(filters, item_key, item_data) {
   return filter_list.includes(value) ? true : false
 }
 
-export function filter_data(data, filters, searchValue, tableLen, setTableLen) {
+export function getFilteredData(data, filters, searchValue, tableLen, setTableLen) {
   let new_array = [];
 
   for (var index in data) {
@@ -132,7 +132,7 @@ export function filter_data(data, filters, searchValue, tableLen, setTableLen) {
     let data_value = {};
 
     for (let item_key in filters) {
-      let item_data = defaults_item_data(item_key, data[index])
+      let item_data = defaultsItemData(item_key, data[index])
       if (item_data === undefined) { passed = false; break; }
 
       passed = filter_item(filters, item_key, item_data)

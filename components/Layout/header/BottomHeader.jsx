@@ -1,7 +1,6 @@
 import GPUCategory from "../../Dropdown/GPUCategory";
 import GPUStock from "../../Dropdown/GPUStock";
-import TelegramChannelsList from "../../Dropdown/TelegramChannelsList";
-import { generations, solutions, telegram_channels } from "./gpu_data";
+import { generations, solutions } from "./GPUdata";
 import PCBuilder from "./PCBuilder";
 
 export default function BottomHeader({ }) {
@@ -10,7 +9,7 @@ export default function BottomHeader({ }) {
       <PCBuilder />
       <GPUStock generations={generations} />
       <GPUCategory title="Mostrar componentes" data_grid={solutions} img="/images/svg/chip.svg" />
-      <TelegramChannelsList telegram_channels={telegram_channels} />
+      {/* <TelegramChannelsList telegram_channels={telegram_channels} /> */}
     </div>
   );
 }

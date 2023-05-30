@@ -9,7 +9,7 @@ export default function chat({ }) {
       </p>
       <img src="../static/img/tg.webp" alt="Telegram: " width="30" height="30" />
       <Link href="https://t.me/joinchat/PlY9lXdQS5gzOTY0" className="btn btn-primary" style="text-decoration: none;">
-        Seguimiento de stock - StockTracker
+        Seguimiento de stock - StockFinder
       </Link>
     </div>
   );

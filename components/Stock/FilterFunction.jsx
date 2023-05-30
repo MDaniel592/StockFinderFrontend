@@ -1,6 +1,6 @@
 
 
-function filter_item(filters, item_key, item_data) {
+function filterItem(filters, item_key, item_data) {
     let filter_list = filters[item_key]["value"];
     if (filter_list.length == 0 || !filter_list) return true
 
@@ -51,7 +51,7 @@ export function getProductAlert(products, alert) {
 
 
 
-export function filter_data(data, filters, searchValue, tableLen, setTableLen) {
+export function getFilteredData(data, filters, searchValue, tableLen, setTableLen) {
     let new_array = [];
     for (var index in data) {
         Object.assign(data[index], data[index]["specs"]);
@@ -64,7 +64,7 @@ export function filter_data(data, filters, searchValue, tableLen, setTableLen) {
             let item_data = data[index]
             if (item_data === undefined) { passed = false; break; }
 
-            passed = filter_item(filters, item_key, item_data)
+            passed = filterItem(filters, item_key, item_data)
             if (passed === false) break
 
             data_value[item_key] = item_data;

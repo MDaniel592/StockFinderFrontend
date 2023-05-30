@@ -1,7 +1,7 @@
 import React from "react";
-import Canales from "../components/Canales";
-import CustomLayout from "../components/Layout/CustomLayout";
-import AuthService from "../services/AuthService";
+import Canales from "../Canales";
+import CustomLayout from "../Layout/CustomLayout";
+import AuthService from "../../services/AuthService";
 
 export default function Home({ data, userData }) {
   /*

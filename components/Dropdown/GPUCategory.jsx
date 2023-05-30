@@ -3,7 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import Link from 'next/link';
 import { Fragment } from "react";
 
-import { generations } from "../Layout/header/gpu_data";
+import { generations } from "../Layout/header/GPUdata";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

@@ -11,7 +11,7 @@ export default function CustomLayout({ userData, title_text, children }) {
       <CustomHead title_text={title_text} />
       <section className="dark bg-google-dark min-h-screen">
         <CustomHeader userData={userData} />
-        <main id="main-content" className="mx-auto min-h-[66.5vh] max-w-screen-2xl">
+        <main id="main-content" className="mx-auto min-h-[66.5vh] max-w-screen-2xl text-gray-300">
           {children}
         </main>
         <CustomFooter></CustomFooter>

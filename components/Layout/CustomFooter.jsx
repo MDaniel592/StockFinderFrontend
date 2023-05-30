@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Banner from "../Banner";
+import Banner from "./Banner";
 export default function CustomFooter() {
   let link_class = 'hover:underline text-left text-blue-500 text-xs sm:text-base';
   return (
@@ -13,7 +13,7 @@ export default function CustomFooter() {
             <div className="pl-1 gap-1 grid justify-start">
               <Link href="/builder" className={link_class}>Configurador</Link>
               <Link href="/categorias" className={link_class}>Componentes</Link>
-              <Link href="/canales-telegram" className={link_class}>Canales de telegram</Link>
+              <br />
             </div>
           </div>
 

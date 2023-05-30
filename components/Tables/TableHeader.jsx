@@ -82,7 +82,7 @@ export default function TableHeader({ data_values, selectedValues, tableLen, sea
         <span className="justify-start mt-3 font-bold text-blue-500">Productos disponibles: {tableLen}</span>
         <div>{<p className='font-medium'>{Obj ? "Filtros aplicados:" : "Ningún filtro aplicado"}</p>}</div>
         <div className="justify-start sm:flex text-xxs font-medium">{Obj}</div>
-        <div className="mt-2 text-center sm:text-left">{Obj ? <button className="font-sansantialiased px-2 py-1 rounded-md text-sm font-medium text-white bg-transparent border border-4 border-error hover:bg-error-dark hover:border-error-dark" onClick={removeFilters}>Quitar Filtros</button> : ""}</div>
+        <div className="mt-2 text-center sm:text-left">{Obj ? <button className="btn-error" onClick={removeFilters}>Quitar Filtros</button> : ""}</div>
       </div>
 
       <div className="mt-4 lg:mt-0 z-0">

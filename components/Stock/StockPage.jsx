@@ -3,7 +3,7 @@ import VerticalFloatingFilters from "../Sidebar/VerticalFloatingFilters";
 import PaginatedItems from "../Tables/Pagination";
 import TableHeader from "../Tables/TableHeader";
 import AlertManagement from "./AlertManagement";
-import { filter_data } from "./FilterFunction";
+import { getFilteredData } from "./FilterFunction";
 import ProductList from "./ProductList";
 
 export default function StockPage({ data_recv, category }) {
@@ -138,7 +138,7 @@ export default function StockPage({ data_recv, category }) {
     refurbished: { value: statusSelected, number: false },
   };
 
-  const filteredData = filter_data(data_recv["products"], filters, searchValue, tableLen, setTableLen);
+  const filteredData = getFilteredData(data_recv["products"], filters, searchValue, tableLen, setTableLen);
   return (
     <section className="w-fit mx-auto">
       <h3 className="text-3xl font-semibold text-center">Listado de {category}</h3>

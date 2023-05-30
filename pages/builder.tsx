@@ -338,23 +338,23 @@ export default function Builder(props: { userData: any; productsList: any }) {
   return (
     <BuilderContext.Provider value={{ onProductSelected, onProductRemoved }}>
       <CustomLayout userData={userData} title_text={"Configurador de PCs"}>
-        <section className="px-4">
+        <section className="default-w-space mt-4 lg:mt-0">
           <h1 className="text-xl sm:text-3xl font-semibold">
             Configurador de equipos
           </h1>
-          <p className="text-sm my-4 text-justify w-full lg:w-3/4 xl:w-3/5 2xl:w-1/2 text-neutral-300">
+          <p className="text-sm my-2 text-justify w-full lg:w-3/4 xl:w-3/5 2xl:w-1/2 text-neutral-300">
             Bienvenido al Configurador de Equipos de StockFinder. En esta
             sección podrá tener al alcance del ratón los componentes de
             StockFinder para generar configuraciones de equipos que tengas en
             mente y exportarlos o guardarlos en tu perfil para más adelante.
           </p>
-          <p className="text-sm my-4 text-justify w-full lg:w-3/4 xl:w-3/5 2xl:w-1/2 text-neutral-300">
+          <p className="text-sm my-2 text-justify w-full lg:w-3/4 xl:w-3/5 2xl:w-1/2 text-neutral-300">
             En base a los componentes elegidos en cada paso se filtrarán los de
             los siguientes. ¡Ya no tienes que preocuparte de si tu nueva RTX
             4090 TI no cabe en la torre!
           </p>
         </section>
-        <section className="builder px-4">
+        <section className="builder default-w-space">
           <article className="step">
             <div className="flex items-center gap-2">
               <p className="text-md font-semibold">

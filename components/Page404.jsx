@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 
-export default function Custom404() {
+export default function Page404() {
   return (
     <div className="flex  bg-cover bg-center h-screen bg-astronaut items-center justify-center">
       <div className="rounded-md shadow-xl">

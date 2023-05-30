@@ -164,3 +164,11 @@ article.product.selected{
 .input{
   @apply bg-zinc-800 text-white p-2 my-1 border rounded-md border-neutral-500 focus:outline-none focus:ring
 }
+
+.default-w-space{
+  @apply px-4 lg:px-12 lg:py-2 
+}
+
+.btn-error{
+  @apply font-sans antialiased px-2 py-1 rounded-md text-sm font-medium text-white bg-transparent border border-4 border-error hover:bg-error-dark hover:border-error-dark
+}
