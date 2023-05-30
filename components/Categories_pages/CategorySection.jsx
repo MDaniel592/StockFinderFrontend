@@ -1,3 +1,4 @@
+import Page404 from "../Page404";
 import CategoryPageChassis from "./CategoryPageChassis";
 import CategoryPageCPU from "./CategoryPageCPU";
 import CategoryPageCPUCooler from "./CategoryPageCPUCooler";
@@ -64,7 +65,7 @@ export default function CategorySection({ category, data }) {
             );
 
         default:
-            return <Custom404 />;
+            return <Page404 />;
     }
 }
 

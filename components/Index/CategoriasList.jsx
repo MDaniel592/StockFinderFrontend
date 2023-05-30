@@ -5,7 +5,7 @@ export default function CategoriasList({ }) {
     let link_class = 'hover:underline text-left text-blue-500 text-xxs lg:text-base';
 
     return (
-        <section className="flex flex-wrap gap-4 sm:justify-left">
+        <section className="flex flex-wrap gap-4 sm:justify-left default-w-space">
             <div className="info mb-4 w-full md:w-fit md:mb-auto">
 
                 <h1 id="INFORMACION" className="text-xl sm:text-3xl font-semibold mt-4">Listado de categorías</h1>

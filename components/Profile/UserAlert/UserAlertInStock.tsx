@@ -1,4 +1,4 @@
-import SmallCustomPill from "components/pills/SmallCustomPill";
+import SmallCustomPill from "components/Pills/SmallCustomPill";
 
 export default function UserAlertInStock({ isInStock }: { isInStock: boolean }) {
   if (isInStock) {

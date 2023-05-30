@@ -20,7 +20,7 @@ export default function StockAlertForm({ updateAlert, gpuModel }) {
     return (
         <div className="my-2 text-center" >
 
-            <button onClick={handleButtonClick} className='font-semibold text-white text-center h-8 z-50 py-1 items-center hover:text-blue-500 w-28 border border-blue-500 bg-zinc-700 rounded-lg'>{isFormVisible ? 'Cerrar' : 'Crear alerta'}</button>
+            <button onClick={handleButtonClick} className='font-semibold text-white text-center h-8 z-50 items-center hover:text-blue-500 w-28 border-2 border-blue-500  rounded-lg'>{isFormVisible ? 'Cerrar' : 'Crear alerta'}</button>
 
             {isFormVisible && (
                 <form onSubmit={handleSubmit} className='font-medium text-neutral-300 text-sm flex flex-col gap-2 mt-2 border-2 border-gray-600 rounded-lg p-2'>

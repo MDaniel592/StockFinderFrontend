@@ -92,7 +92,7 @@ export default function Canales({ data }) {
 
           <div id="builder-section" className="h-[6vh] rounded-lg">
             <div className="flex items-center h-full">
-              <h2 className="text-xl lg:text-2xl lg:text-4xl font-bold m-auto">{name}</h2>
+              <h2 className="text-xl lg:text-2xl lg:text-3xl font-bold m-auto">{name}</h2>
             </div>
           </div>
 

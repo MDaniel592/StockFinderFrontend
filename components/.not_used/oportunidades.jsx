@@ -1,6 +1,6 @@
 import React from "react";
-import CustomLayout from "../components/Layout/CustomLayout";
-import AuthService from "../services/AuthService";
+import CustomLayout from "../Layout/CustomLayout";
+import AuthService from "../../services/AuthService";
 
 export default function Home({ data, userData }) {
 

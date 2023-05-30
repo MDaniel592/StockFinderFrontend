@@ -6,9 +6,9 @@ export default function AvisoLegal({ userData }) {
   return (
     <React.Fragment>
       <CustomLayout userData={userData} title_text={false}>
-        <section>
+        <section className="default-w-space text-xs">
           <div className="mx-auto text-justify">
-            <h1 className="text-4xl">Aviso Legal</h1>
+            <h1 className="text-3xl">Aviso Legal</h1>
             <section className="mt-4">
               <h2 className="text-xl">Uso de la plataforma</h2>
               <div className="section-title-separator bg-blue-800 w-8 rounded-full mt-1 mb-4 h-2"></div>

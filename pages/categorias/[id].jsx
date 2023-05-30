@@ -1,7 +1,7 @@
 import React from "react";
-import Custom404 from "../../components/404";
 import CategorySection from "../../components/Categories_pages/CategorySection";
 import CustomLayout from "../../components/Layout/CustomLayout";
+import Page404 from "../../components/Page404";
 import AuthService from "../../services/AuthService";
 
 const allowedCategories = [
@@ -15,7 +15,7 @@ const allowedCategories = [
  * If there is a valid category, the corresponding webpage will be returned
  */
 export default function Home({ data, category, userData }) {
-  if (!data) return <Custom404 />;
+  if (!data) return <Page404 />;
 
   const title_text = category.charAt(0).toUpperCase() + category.slice(1).replaceAll("-", " ")
   return (

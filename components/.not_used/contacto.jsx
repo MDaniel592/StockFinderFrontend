@@ -1,7 +1,7 @@
 import React from "react";
-import Contact from "../components/Index/Contact";
-import CustomLayout from "../components/Layout/CustomLayout";
-import AuthService from "../services/AuthService";
+import Contact from "../Index/Contact";
+import CustomLayout from "../Layout/CustomLayout";
+import AuthService from "../../services/AuthService";
 
 export default function AvisoLegal({ userData }) {
     return (

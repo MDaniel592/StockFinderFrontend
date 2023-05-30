@@ -1,14 +1,13 @@
 import React from "react";
-import Custom404 from "../../components/404";
 import CustomLayout from "../../components/Layout/CustomLayout";
+import Page404 from "../../components/Page404";
 import ProductPage from "../../components/Product/ProductPage";
 import AuthService from "../../services/AuthService";
 
 // Easy, we receive the UUID as link parameter** and we used it to retrieve the product's data
 export default function Home({ data, userData }) {
-  // return <Custom404 />;
   if (Object.keys(data).length === 0) {
-    return <Custom404 />;
+    return <Page404 />;
   }
 
   const title_text = data?.name ? data.name : false

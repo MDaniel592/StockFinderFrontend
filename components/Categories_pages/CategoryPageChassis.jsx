@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CategoryPage from "./CategoryPage";
-import { filter_data } from "./FilterFunction";
+import { getFilteredData } from "./FilterFunction";
 
 export default function CategoryPageCPUCooler({ data_recv }) {
 
@@ -279,7 +279,7 @@ export default function CategoryPageCPUCooler({ data_recv }) {
     'Tipo de Caja': { value: socketSelected, number: false },
   };
 
-  const filteredData = filter_data(data_memo["products"], filters, searchValue, tableLen, setTableLen);
+  const filteredData = getFilteredData(data_memo["products"], filters, searchValue, tableLen, setTableLen);
   return (
     <>
       <CategoryPage data_list={data_list} data_slider={data_slider} tableLen={tableLen} handleSearch={handleSearch}

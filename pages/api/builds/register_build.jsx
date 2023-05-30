@@ -1,5 +1,5 @@
 // Server Side Rendering -> Hidden from user
-import Custom404 from "../../404";
+import Page404 from "../../../components/Page404";
 
 export default async function handler(req, res) {
     if (req.method === "POST") {
@@ -23,5 +23,5 @@ export default async function handler(req, res) {
             return res.status(500).json(err);
         }
     }
-    return <Custom404 />;
+    return <Page404 />;
 }

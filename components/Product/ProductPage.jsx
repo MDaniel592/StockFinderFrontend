@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Availability from "../../models/Availability";
 import ProductInfo from "../../models/ProductInfo";
 import Specification from "../../models/Specification";
-import CustomPill from "../pills/CustomPill";
+import CustomPill from "../Pills/CustomPill";
 import AvailabilitySection from "./AvailabilitySection";
 import GraphSection from "./GraphSection";
 

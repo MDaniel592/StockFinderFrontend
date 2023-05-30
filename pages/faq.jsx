@@ -1,5 +1,5 @@
 import React from "react";
-import FAQ from "../components/Index/FAQ";
+import FAQ from "../components/Explain/FAQ";
 import CustomLayout from "../components/Layout/CustomLayout";
 import AuthService from "../services/AuthService";
 
@@ -7,7 +7,9 @@ export default function AvisoLegal({ userData }) {
     return (
         <React.Fragment>
             <CustomLayout userData={userData} title_text={false}>
-                <FAQ />
+                <div className="default-w-space">
+                    <FAQ />
+                </div>
             </CustomLayout>
         </React.Fragment>
     );

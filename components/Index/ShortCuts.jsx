@@ -64,7 +64,7 @@ export default function ShortCuts({ }) {
       <div className="section-title-separator bg-blue-500 w-16 sm:w-32 rounded-full mt-1 mb-4 h-2 mx-auto"></div>
 
       <div className="container mx-auto">
-        <ul className="hidden lg:flex flex-wrap justify-center">
+        <ul className="flex xl:grid flex-wrap xl:grid-cols-4 justify-center ">
           {TOTAL_IMAGES.map((result) => {
             const { id, name, image, url } = result;
             return (
@@ -80,36 +80,11 @@ export default function ShortCuts({ }) {
               >
                 <Link href={url}>
                   <div className="flex flex-col place-items-center relative p-1">
-                    <img src={image} alt={`${name} Thumbnail`} className="bg-google-dark h-48 w-48 rounded-md" />
-                    <p className="absolute bottom-0 text-neutral-300 font-semibold text-sm text-center">{name}</p>
+                    <img src={image} alt={`${name} Thumbnail`} className="bg-google-dark h-28 lg:h-48 w-32 lg:w-48 rounded-md" />
+                    <p className="absolute bottom-0 text-neutral-300 font-semibold text-xs lg:text-sm text-center">{name}</p>
                   </div>
                 </Link>
               </motion.div>
-            );
-          })}
-        </ul>
-
-        <ul className="flex flex-wrap justify-center lg:hidden">
-          {TOTAL_IMAGES.map((result) => {
-            const { id, name, image, url } = result;
-            return (
-              <motion.li key={id} className="custom-card2"
-                whileHover={{
-                  position: "relative",
-                  zIndex: 1,
-                  background: "bg-google-dark",
-                  scale: [1, 1.4, 1.2],
-                  rotate: [0, 15, -15, 0],
-                  transition: { duration: 0.5 },
-                }}
-              >
-                <Link href={url}>
-                  <div className="flex flex-col place-items-center relative p-1">
-                    <img src={image} alt={`${name} Thumbnail`} className="bg-google-dark h-28 w-32 rounded-lg" />
-                    <p className="absolute bottom-0 text-neutral-300 font-semibold text-xs text-center">{name}</p>
-                  </div>
-                </Link>
-              </motion.li>
             );
           })}
         </ul>
@@ -162,14 +137,6 @@ export default function ShortCuts({ }) {
           text-decoration: none;
           border: 1px solid #eaeaea;
           border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-        .custom-card2 {
-          margin: 0.1rem;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
         .custom-card:hover,

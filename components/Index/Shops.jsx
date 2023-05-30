@@ -6,7 +6,7 @@ const shop_list_2 = ['LDLC', 'Neobyte', 'PcComponentes', 'Speedler', 'Versus Gam
 export default function Shops({ }) {
   return (
     <section className='bg-zinc-800 rounded-lg my-2 py-2 px-2'>
-      {/* <p id="shops" className="text-2xl sm:text-4xl font-semibold text-center">
+      {/* <p id="shops" className="text-2xl sm:text-3xl font-semibold text-center">
         Tiendas soportadas
       </p> */}
       <ul className="flex justify-center py-1">

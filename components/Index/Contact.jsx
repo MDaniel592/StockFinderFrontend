@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Contact({ }) {
   return (
-    <section>
+    <section className="default-w-space">
       <h1 id="contacto" className="text-3xl font-semibold">
         Contacto
       </h1>
@@ -16,9 +16,9 @@ export default function Contact({ }) {
           <TelegramIcon />
           <span className="ml-2">@MMDaniel</span>
         </Link>
-        <Link href="https://twitter.com/StockTrackerBot" className="inline as-btn primary">
+        <Link href="https://twitter.com/StockFinderBot" className="inline as-btn primary">
           <TwitterIcon />
-          <span className="ml-2">StockTrackerBot</span>
+          <span className="ml-2">StockFinderBot</span>
         </Link>
       </div>
 

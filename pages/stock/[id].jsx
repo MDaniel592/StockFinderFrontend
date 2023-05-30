@@ -1,6 +1,6 @@
 import React from "react";
-import Custom404 from "../../components/404";
 import CustomLayout from "../../components/Layout/CustomLayout";
+import Page404 from "../../components/Page404";
 import StockPage from "../../components/Stock/StockPage";
 import AuthService from "../../services/AuthService";
 // import { ALLOWED_MVIDIA, ALLOWED_AMD } from "../../utils/Database";
@@ -12,7 +12,7 @@ const ALLOWED_MVIDIA = ["RTX3050", "RTX3060", "RTX3060TI", "RTX3070", "RTX3070TI
  * If there is a valid category, the corresponding webpage will be returned
  */
 export default function Home({ data, userData, category }) {
-  if (data === null) return <Custom404 />;
+  if (data === null) return <Page404 />;
 
   return (
     <React.Fragment>

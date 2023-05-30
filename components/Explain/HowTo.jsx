@@ -3,12 +3,12 @@ import React from "react";
 
 export default function HowTo({ }) {
   return (
-    <section>
-      <h1 id="PRODUCTO" className="text-2xl sm:text-4xl font-semibold">
+    <div>
+      <h1 id="PRODUCTO" className="text-2xl sm:text-3xl font-semibold">
         ¿Cómo se hace uso de esta herramienta?
       </h1>
       <div className="section-title-separator bg-blue-800 w-8 rounded-full mt-1 mb-4 h-2"></div>
-      <p className="my-4">
+      <p className="my-4 text-sm">
         Añade alertas de sus productos favoritos registrándose en nuestra web o mediante nuestro bot de Telegram.
         Lo único que necesitas es el enlace al producto y el precio mínimo por el que se te notificará cuando haya stock disponible.
       </p>
@@ -27,6 +27,6 @@ export default function HowTo({ }) {
           Habla con el bot
         </Link>
       </div>
-    </section>
+    </div>
   );
 }
