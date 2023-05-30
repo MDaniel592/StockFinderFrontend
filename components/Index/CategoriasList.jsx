@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { generations, solutions } from "../Layout/header/gpu_data";
+import { generations, solutions } from "../Layout/header/GPUdata";
 
 export default function CategoriasList({ }) {
     let link_class = 'hover:underline text-left text-blue-500 text-xxs lg:text-base';
