@@ -31,7 +31,7 @@ export default function New_Alert({ userData, data }) {
         <React.Fragment>
             <CustomLayout userData={userData} title_text={"Perfil"}>
                 <ProfileLayout>
-                    <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+                    <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">Asociar Telegram</Typography>

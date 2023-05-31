@@ -27,7 +27,7 @@ export default function main({ userData }) {
                 }}
                 className="rounded-xl bg-zinc-800"
               >
-                <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+                <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
                   <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">

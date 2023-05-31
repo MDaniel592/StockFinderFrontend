@@ -29,7 +29,7 @@ export default function main({ userData }) {
       <React.Fragment>
         <CustomLayout userData={""} title_text={"Registro"}>
           <ProfileLayout>
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -49,7 +49,7 @@ export default function main({ userData }) {
     <React.Fragment>
       <CustomLayout userData={userData} title_text={false}>
         <ProfileLayout>
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <div className="my-6 mx-12">
