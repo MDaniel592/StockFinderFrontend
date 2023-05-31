@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useContext, useState } from "react";
 import { ServiceContext } from "../../../pages/_app";
 import CookieService from "../../../services/CookieService";
@@ -6,6 +7,7 @@ import ErrorMessageAlert from "../../alerts/ErrorMessageAlert";
 import SuccessMessageAlert from "../../alerts/SuccessMessageAlert";
 
 export default function PasswordResetForm({ userData }) {
+  const router = useRouter();
   const [values, setValues] = useState({
     token: "",
     password: "",
@@ -50,14 +52,11 @@ export default function PasswordResetForm({ userData }) {
 
   return (
     <React.Fragment>
-      <div className="my-2 text-sm">
-        <label>
-          <span className="text-center hidden sm:block text-base">Cambio de contraseña</span>
-          <div className="border-t mx-10 mt-4 mb-4 block sm:hidden"></div>
-          <span className="text-center text-2xl block sm:hidden">Cambio de contraseña</span>
-          <p className="text-xs text-center mt-2 mb-2">Se permite un cambio cada 24 horas</p>
+      <div className="px-4 text-sm text-center">
+        <p className="text-xs my-2">Se permite un único cambio cada 24 horas</p>
+        <div className="flex flex-wrap">
           <input
-            className="input mb-3"
+            className="input my-2 mb-4 mx-auto"
             type="password"
             name="currentPassword"
             placeholder="Contraseña actual"
@@ -68,7 +67,7 @@ export default function PasswordResetForm({ userData }) {
             required
           />
           <input
-            className="input"
+            className="input mx-auto"
             type="password"
             name="newPassword"
             placeholder="Nueva contraseña"
@@ -79,7 +78,7 @@ export default function PasswordResetForm({ userData }) {
             required
           />
           <input
-            className="input"
+            className="input mx-auto"
             type="password"
             name="newPasswordConfirmation"
             placeholder="Repita la contraseña"
@@ -89,14 +88,13 @@ export default function PasswordResetForm({ userData }) {
             onChange={handleChange}
             required
           />
-          <a className="text-xxs text-center text-neutral-400">
-            La contraseña debe tener de 8-24 characteres sin contener espacios, y debería incluir letras y números.
-          </a>
-        </label>
+        </div>
+        <p className="text-xxs lg:mx-4">La contraseña debe tener de 8-24 characteres sin contener espacios, y debería incluir letras y números.</p>
 
         <ErrorMessageAlert hasError={errorMessage !== undefined} errorText={errorMessage}></ErrorMessageAlert>
         <SuccessMessageAlert isSuccess={successMessage !== undefined} message={successMessage}></SuccessMessageAlert>
         <button className="btn-blue-white my-3 w-48 mx-auto" onClick={(e) => onButtonPressed(e)}>Actualizar Contraseña </button>
+        <button className="btn-blue-white mb-4 w-48 mx-auto" onClick={(e) => router.push("/profile")}>Volver</button>
       </div>
       <style jsx>
         {`

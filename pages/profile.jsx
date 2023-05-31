@@ -4,8 +4,7 @@ import CustomLayout from "../components/Layout/CustomLayout";
 import UserAlerts from "../components/Profile/UserAlert/UserAlerts";
 import UserDataProfile from "../components/Profile/UserData/UserData";
 import WarningMessage from "../components/Profile/UserData/WarningMessage";
-import UserPassword from "../components/Profile/UserPassword/UserPassword";
-
+import UserManagement from "../components/Profile/UserManagement";
 import UserAlertModel from "../models/UserAlertModel";
 import AuthService from "../services/AuthService";
 import CookieService from "../services/CookieService";
@@ -47,16 +46,16 @@ export default function MyProfile({ userData }) {
 
   return (
     <CustomLayout userData={userData} title_text={false}>
-      <div className="text-neutral-200 mx-2 sm:mx-10">
+      <div className="mx-2 sm:mx-10">
 
         <h3 className="text-3xl font-semibold text-center">Panel de usuario</h3>
         <div className="section-title-separator bg-blue-500 w-16 sm:w-32 rounded-full mt-1 mb-4 h-2 mx-auto"></div>
 
-        <WarningMessage userData={userData}></WarningMessage>
+        <WarningMessage userData={userData} />
 
-        <div className="flex gap-4">
+        <div className="block lg:flex gap-4 mx-auto">
           <div className="w-52 hidden lg:block">
-            <UserDataProfile userData={userData}></UserDataProfile>
+            <UserDataProfile userData={userData} />
             <div className="mx-12 border-b"></div>
 
             {active_telegram && (<div className="my-4 mx-8">
@@ -64,17 +63,17 @@ export default function MyProfile({ userData }) {
             </div>)}
 
             <div className="mx-12 border-b"></div>
-            <UserPassword userData={userData}></UserPassword>
+            <UserManagement />
           </div>
 
           <div className="grid">
             <div className="sm:mx-36 lg:hidden">
-              <UserDataProfile userData={userData}></UserDataProfile>
+              <UserDataProfile userData={userData} />
             </div>
             <div className="mx-auto w-32 border-b border-neutral-300 lg:hidden"></div>
 
             <div className="my-2">
-              <UserAlerts alerts={alertsList} userData={userData}></UserAlerts>
+              <UserAlerts alerts={alertsList} userData={userData} />
             </div>
 
             {active_telegram && (<div className="my-2 w-36 mx-auto lg:hidden">
@@ -82,7 +81,7 @@ export default function MyProfile({ userData }) {
             </div>)}
 
             <div className="sm:mx-36 lg:hidden">
-              <UserPassword userData={userData}></UserPassword>
+              <UserManagement />
             </div>
           </div>
         </div>
