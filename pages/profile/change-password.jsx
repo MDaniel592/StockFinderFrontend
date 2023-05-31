@@ -5,11 +5,11 @@ import { useRouter } from "next/router";
 import React, { useContext, useEffect } from "react";
 import CustomLayout from "../../components/Layout/CustomLayout";
 import ProfileLayout from "../../components/Layout/ProfileLayout";
-import TelegramForm from "../../components/Profile/UserTelegram/TelegramForm";
+import UserPassword from "../../components/Profile/UserPassword/UserPassword";
 import AuthService from "../../services/AuthService";
 import { ServiceContext } from "../_app";
 
-export default function New_Alert({ userData, data }) {
+export default function ProfileChangePassword({ userData, data }) {
     const { authService } = useContext(ServiceContext);
     const router = useRouter();
 
@@ -34,8 +34,8 @@ export default function New_Alert({ userData, data }) {
                     <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
                         <LockOutlinedIcon />
                     </Avatar>
-                    <Typography component="h1" variant="h5">Asociar Telegram</Typography>
-                    <TelegramForm userData={userData}></TelegramForm>
+                    <Typography component="h1" variant="h5">Cambio de contraseña</Typography>
+                    <UserPassword userData={userData}></UserPassword>
                 </ProfileLayout>
             </CustomLayout>
         </React.Fragment>

@@ -115,4 +115,18 @@ export default class UserService {
       body: JSON.stringify(alertInfo),
     });
   }
+
+  /**
+   * Método usado para poder eliminar la cuenta del usuario.
+   *
+   * @param userInfo objeto con el token del usuario.
+   * @returns La promesa con un 200 OK o un json del estilo {error: descripción del error}
+   */
+    deleteAccount(userInfo: { token: string }): Promise<Response> {
+      return fetch(`${process.env.NEXT_API}/users/delete_user`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userInfo),
+      });
+    }
 }

@@ -2,16 +2,20 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { useRouter } from "next/router";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CustomLayout from "../../components/Layout/CustomLayout";
 import ProfileLayout from "../../components/Layout/ProfileLayout";
-import TelegramForm from "../../components/Profile/UserTelegram/TelegramForm";
+import UserDelete from "../../components/Profile/UserDelete/UserDelete";
 import AuthService from "../../services/AuthService";
 import { ServiceContext } from "../_app";
 
-export default function New_Alert({ userData, data }) {
-    const { authService } = useContext(ServiceContext);
+export default function ProfileChangePassword({ userData, data }) {
     const router = useRouter();
+    const { userService, authService } = useContext(ServiceContext);
+    const [errorMessage, setErrorMessage] = useState(undefined);
+
+
+
 
     const validateUserData = async () => {
         if (!userData) {
@@ -34,8 +38,8 @@ export default function New_Alert({ userData, data }) {
                     <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
                         <LockOutlinedIcon />
                     </Avatar>
-                    <Typography component="h1" variant="h5">Asociar Telegram</Typography>
-                    <TelegramForm userData={userData}></TelegramForm>
+                    <Typography component="h1" variant="h5">Eliminar cuenta</Typography>
+                    <UserDelete userData={userData}></UserDelete>
                 </ProfileLayout>
             </CustomLayout>
         </React.Fragment>
