@@ -76,11 +76,63 @@ article.step + article.step{
 article.product.selected{
   @apply border border-4 border-blue-600;
 }
+
+
+
+.table-text-xs {
+  @apply tracking-tighter text-xs font-medium font-sans text-neutral-300;
+}
+
+.table-text-xxs {
+  @apply tracking-tighter text-xxs font-medium font-sans text-neutral-300;
+}
+
+.table-pagination {
+  @apply -mb-4 font-sans text-sm text-neutral-300;
+}
+
+.sidebar-div {
+  @apply text-left mx-2 my-1 text-neutral-300;
+}
+
+.stock-header-text{
+  @apply text-neutral-300 font-medium font-sans text-sm;
+}
+.stock-text{
+  @apply text-neutral-300 font-sans text-xs;
+}
+
+
+.input{
+  @apply bg-zinc-800 text-white p-2 my-1 border rounded-md border-neutral-500 focus:outline-none focus:ring
+}
+
+.default-w-space{
+  @apply px-4 lg:px-12 lg:py-2 
+}
+
 /*
 
   BOTONES
 
 */
+
+.btn-error{
+  @apply py-1 px-2 font-sans antialiased font-semibold text-white text-center items-center border-2 border-error rounded-md bg-transparent hover:bg-error-dark hover:border-error-dark
+}
+
+.btn-ok{
+  @apply py-1 px-2 font-sans antialiased font-semibold text-white text-center items-center border-2 border-blue-500 rounded-md hover:bg-blue-500
+}
+
+.btn-transparent-white{
+  @apply py-1 px-2 font-sans antialiased font-semibold text-white text-center items-center border-2 border-blue-500 rounded-md hover:bg-white hover:text-blue-500
+}
+
+.btn-blue-white{
+  @apply w-full block whitespace-nowrap px-4 py-1 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded active:text-blue-500 hover:bg-white hover:text-blue-600 focus:outline-none focus:ring
+}
+
 
 .btn-small,
 .as-btn-small {
@@ -122,10 +174,6 @@ article.product.selected{
   @apply px-1 rounded-md text-white bg-transparent border border-2 border-blue-600 hover:bg-blue-800 hover:border-blue-800;
 }
 
-.btn-blue-white{
-  @apply w-full block whitespace-nowrap px-4 py-1 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded active:text-blue-500 hover:bg-white hover:text-blue-600 focus:outline-none focus:ring
-}
-
 .btn.error,
 .as-btn.error {
   @apply px-4 py-2 rounded-md text-white bg-transparent border border-4 border-error hover:bg-error-dark hover:border-error-dark;
@@ -135,44 +183,4 @@ article.product.selected{
 .btn.error-small,
 .as-btn.error-small{
   @apply px-2 py-1 rounded-md text-white bg-transparent border border-2 border-error hover:bg-error-dark hover:border-error-dark;
-}
-
-.table-text-xs {
-  @apply tracking-tighter text-xs font-medium font-sans text-neutral-300;
-}
-
-.table-text-xxs {
-  @apply tracking-tighter text-xxs font-medium font-sans text-neutral-300;
-}
-
-.table-pagination {
-  @apply -mb-4 font-sans text-sm text-neutral-300;
-}
-
-.sidebar-div {
-  @apply text-left mx-2 my-1 text-neutral-300;
-}
-
-.stock-header-text{
-  @apply text-neutral-300 font-medium font-sans text-sm;
-}
-.stock-text{
-  @apply text-neutral-300 font-sans text-xs;
-}
-
-
-.input{
-  @apply bg-zinc-800 text-white p-2 my-1 border rounded-md border-neutral-500 focus:outline-none focus:ring
-}
-
-.default-w-space{
-  @apply px-4 lg:px-12 lg:py-2 
-}
-
-.btn-error{
-  @apply font-sans antialiased px-2 py-1 rounded-md text-sm font-medium text-white bg-transparent border border-2 border-error hover:bg-error-dark hover:border-error-dark
-}
-
-.btn-ok{
-  @apply font-semibold text-white text-center h-8 z-50 items-center w-28 border-2 border-blue-500 rounded-md hover:bg-blue-500
 }

@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
 
-export default function NewAlertForm({ telegram, alertType, gpu_models }) {
+export default function NewAlertForm({ telegram, alertType, gpuModels }) {
 
     const [values, setValues] = useState({
         token: "",
@@ -110,7 +110,7 @@ export default function NewAlertForm({ telegram, alertType, gpu_models }) {
                             onChange={handleChange}
                             required
                         >
-                            {gpu_models.map((value) => { return <MenuItem value={value}>{value}</MenuItem> })}
+                            {gpuModels.map((value) => { return <MenuItem id={Math.random()} value={value}>{value}</MenuItem> })}
                         </Select>
                     </FormControl>
                 </div>
@@ -131,6 +131,7 @@ export default function NewAlertForm({ telegram, alertType, gpu_models }) {
                 onChange={handleChange}
                 required
             />
+            <p className="text-xs text-center">{alertTextSecondary}</p>
         </label>)
     }
 
@@ -138,6 +139,8 @@ export default function NewAlertForm({ telegram, alertType, gpu_models }) {
     let alertName;
     let alertInput;
     let alertValue;
+    let alertTextMain;
+    let alertTextSecondary;
 
     let selectedForm = 'defaultForm'
 
@@ -147,25 +150,32 @@ export default function NewAlertForm({ telegram, alertType, gpu_models }) {
             alertInput = 'Enlace'
             alertValue = values.url
             alertTitleName = 'Enlace'
+            alertTextMain = "Se hará un seguimiento del producto en solo una tienda."
+            alertTextSecondary = "Introduce el enlace de una de las tiendas soportadas (PcComponentes, Coolmod, Aussar...)."
             break;
         case 'Producto':
             alertName = 'uuid'
             alertInput = 'UUID'
             alertValue = values.uuid
             alertTitleName = 'Producto'
+            alertTextMain = "Se hará un seguimiento del producto en todas las tienda que esté disponible."
+            alertTextSecondary = "Copia el UUID de un producto (ded50112-3fcb-4e13-a49d-6134a80bd154) de esta web."
             break;
         case 'Modelo':
             selectedForm = 'newModel'
+            alertTextMain = "Se hará un seguimiento del modelo seleccionado en todas las tiendas."
             break
         default:
             return <></>
     }
     return (
         <>
-            <div className="my-6 mx-12 text-neutral-300">
+            <div className="my-4 mx-12">
+                <p className='text-xs mb-4 text-center'>{alertTextMain}</p>
+
                 {selectedForm === 'defaultForm' ? defaultForm() : newModelAlertForm()}
-                <label className="flex flex-col">
-                    <span className="text-center font-semibold text-neutral-300">Precio</span>
+                <label className="flex flex-col my-2">
+                    <span className="text-center font-semibold">Precio</span>
                     <input
                         className="p-2 my-1 rounded-lg"
                         type="number"
@@ -178,7 +188,7 @@ export default function NewAlertForm({ telegram, alertType, gpu_models }) {
                         required
                     />
                     <a className="text-xs text-center text-slate-300">
-                        Todos los precios se consideran en Euros (€). No es necesario introducir el símbolo
+                        Todos los precios se consideran en euros (€). No es necesario introducir el símbolo.
                     </a>
                 </label>
 

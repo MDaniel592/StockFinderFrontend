@@ -27,11 +27,11 @@ export default function AuthSection({ userData }) {
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <button
               onClick={onProfileButtonPressed}
-              className="text-base font-semibold px-2 py-2 rounded-md shadow-sm border border-gray-500 hover:bg-zinc-700 text-white hover:text-blue-500 mr-5"
+              className="text-base font-semibold mr-5 btn-transparent-white"
             >
               Panel de usuario
             </button>
-            <button onClick={onLogoutButtonPressed} className="inline-flex justify-center px-2 py-2 rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-800">
+            <button onClick={onLogoutButtonPressed} className="inline-flex justify-center btn-ok">
               {/* Cerrar sesión (sesión iniciada como {userData.email}) */}
               Cerrar sesión
             </button>
@@ -55,7 +55,7 @@ export default function AuthSection({ userData }) {
         </Link>
         <Link
           href="/sign-up"
-          className="ml-8 inline-flex items-center justify-center px-2 py-2 rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-800"
+          className="ml-8 inline-flex items-center justify-center btn-ok"
         >
           Registrarse
         </Link>
