@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useContext, useEffect } from "react";
 import CustomLayout from "../../components/Layout/CustomLayout";
-import NewAlertForm from "../../components/Profile/NewAlert";
+import NewAlert from "../../components/Profile/NewAlert";
 import AlertService from "../../services/AlertService";
 import AuthService from "../../services/AuthService";
 
@@ -28,7 +28,7 @@ export default function New_Alert({ userData, data }) {
   return (
     <React.Fragment>
       <CustomLayout userData={userData} title_text={false}>
-        <NewAlertForm userData={userData} telegram={userData.telegram} gpu_models={data} />
+        <NewAlert userData={userData} telegram={userData.telegram} gpuModels={data} />
       </CustomLayout>
     </React.Fragment>
   );
