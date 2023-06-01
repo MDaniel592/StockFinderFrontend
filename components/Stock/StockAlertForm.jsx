@@ -20,7 +20,7 @@ export default function StockAlertForm({ updateAlert, gpuModel }) {
     return (
         <div className="my-2 text-center" >
 
-            <button onClick={handleButtonClick} className='btn-ok hover:text-blue-500'>{isFormVisible ? 'Cerrar' : 'Crear alerta'}</button>
+            <button onClick={handleButtonClick} className='btn-ok'>{isFormVisible ? 'Cerrar' : 'Crear alerta'}</button>
 
             {isFormVisible && (
                 <form onSubmit={handleSubmit} className='font-medium text-neutral-300 text-sm flex flex-col gap-2 mt-2 border-2 border-gray-600 rounded-lg p-2'>
@@ -46,7 +46,7 @@ export default function StockAlertForm({ updateAlert, gpuModel }) {
                             onChange={(e) => setMaxPrice(e.target.value)}
                         />
                     </label>
-                    <button type="submit" className='px-2 py-1 rounded-md border-gray-600 mx-auto bg-blue-600 hover:bg-blue-900'>Nueva Alerta</button>
+                    <button type="submit" className='btn-blue-white'>Nueva Alerta</button>
                 </form>
             )}
         </div>
