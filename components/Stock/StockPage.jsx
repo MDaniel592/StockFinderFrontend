@@ -141,9 +141,13 @@ export default function StockPage({ data_recv, category }) {
   const filteredData = getFilteredData(data_recv["products"], filters, searchValue, tableLen, setTableLen);
   return (
     <section className="w-fit mx-auto">
-      <h3 className="text-3xl font-semibold text-center">Listado de {category}</h3>
-      <div className="section-title-separator bg-blue-500 w-16 sm:w-32 rounded-full mt-1 mb-4 h-2 mx-auto"></div>
+      <h3 className="mt-2 text-xl lg:text-3xl font-semibold text-center">Modelos de {category} en stock</h3>
+      <div className="section-title-separator bg-blue-500 w-16 sm:w-48 rounded-full mt-1 h-2 mx-auto"></div>
 
+      <p className="mx-auto max-w-2xl text-center text-xs font-sans antialiased my-4">
+        Las alertas creadas en este apartado únicamente le avisarán manteniendo esta pestaña abierta (saltará una notificación y un sonido de alerta).
+        Puede recibir las alertas por telegram registrandose cómo usuario, y creándolas desde su perfil.
+      </p>
       <div name="stockForm" className="flex justify-center">
         <AlertManagement products={data_recv["products"]} category={category} />
       </div>
