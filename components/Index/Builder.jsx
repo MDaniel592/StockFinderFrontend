@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Builder({ }) {
   return (
@@ -17,7 +18,15 @@ export default function Builder({ }) {
             </p>
           </div>
           <div className="action">
-            <Link href="/builder" className="as-btn primary text-lg md:text-2xl lg:text-3xl">Configura tu PC</Link>
+            <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                href=""
+                className="text-base sm:text-lg subpixel-antialiased inline-flex as-btn primary"
+              >
+              <Link href="/builder">Configura tu PC</Link>
+              </motion.a>
+
           </div>
         </div>
       </section>
