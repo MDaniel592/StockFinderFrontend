@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { ServiceContext } from "../../pages/_app";
-import ErrorMessageAlert from "../alerts/ErrorMessageAlert";
+import ErrorMessageAlert from "../Alerts/ErrorMessageAlert";
 
 export default function TelegramEmailCodesStep({ handleChange, prevStep, values }) {
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -150,7 +150,7 @@ export default function TelegramEmailCodesStep({ handleChange, prevStep, values 
           input {
             padding: 8px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            borderRadius: 4px;
             color: black;
           }
           .error {

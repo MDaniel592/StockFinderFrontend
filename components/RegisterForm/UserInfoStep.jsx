@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ServiceContext } from "../../pages/_app";
 import { CustomErrors } from "../../utils/CustomErrors";
-import ErrorMessageAlert from "../alerts/ErrorMessageAlert";
+import ErrorMessageAlert from "../Alerts/ErrorMessageAlert";
 
 export default function UserInfoStep({ handleChange, nextStep, values }) {
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -97,7 +97,7 @@ export default function UserInfoStep({ handleChange, nextStep, values }) {
             padding: 8px;
             margin: 0.3rem 0 1rem;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            borderRadius: 4px;
             color: black;
           }
           .error {

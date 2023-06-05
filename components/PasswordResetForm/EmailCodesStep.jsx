@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ServiceContext } from "../../pages/_app";
-import ErrorMessageAlert from "../alerts/ErrorMessageAlert";
+import ErrorMessageAlert from "../Alerts/ErrorMessageAlert";
 
 export default function EmailCodesStep({ handleChange, prevStep, nextStep, values }) {
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -98,7 +98,7 @@ export default function EmailCodesStep({ handleChange, prevStep, nextStep, value
           input {
             padding: 8px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            borderRadius: 4px;
             color: black;
           }
           .error {

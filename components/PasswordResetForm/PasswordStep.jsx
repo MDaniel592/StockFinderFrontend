@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ServiceContext } from "../../pages/_app";
-import ErrorMessageAlert from "../alerts/ErrorMessageAlert";
-import RegisterSuccessAlert from "../alerts/RegisterSuccessAlert";
+import ErrorMessageAlert from "../Alerts/ErrorMessageAlert";
+import RegisterSuccessAlert from "../Alerts/RegisterSuccessAlert";
 
 export default function IdTelegramStep({ handleChange, prevStep, values }) {
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -98,7 +98,7 @@ export default function IdTelegramStep({ handleChange, prevStep, values }) {
             padding: 8px;
             margin: 0.3rem 0 1rem;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            borderRadius: 4px;
             color: black;
           }
           .error {

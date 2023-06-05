@@ -12,7 +12,7 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import CategoryService from "services/CategoryService";
-import ErrorMessageAlert from "../components/alerts/ErrorMessageAlert";
+import ErrorMessageAlert from "../components/Alerts/ErrorMessageAlert";
 import CustomLayout from "../components/Layout/CustomLayout";
 import AuthService from "../services/AuthService";
 import BuildService from "../services/BuildService";

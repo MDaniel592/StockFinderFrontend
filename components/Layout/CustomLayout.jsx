@@ -17,7 +17,7 @@ export default function CustomLayout({ userData, title_text, children }) {
         <CustomFooter></CustomFooter>
         {/* <Tabbar /> */}
         <CookieConsent cookieName="StockFinder_CookieConsent" buttonText="Comprendo" expires={30} location="bottom"
-          buttonStyle={{ 'border-radius': '6px' }} style={{}} buttonClasses="btn btn-primary"
+          buttonStyle={{ 'borderRadius': '6px' }} style={{}} buttonClasses="btn btn-primary"
           containerClasses="alert alert-warning items-center text-center sm:text-left justify-center sm:justify-left">
           <div className="grid -mb-4 sm:-mb-0">
             <span className="text-lg font-semibold -mt-2">Privacidad</span>
