@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useContext, useState } from "react";
 import { ServiceContext } from "../../pages/_app";
-import ErrorMessageAlert from "../alerts/ErrorMessageAlert";
+import ErrorMessageAlert from "../Alerts/ErrorMessageAlert";
 
 export default function UserInfoStep({ handleChange, nextStep, values }) {
   const [errorMessage, setErrorMessage] = useState(undefined);

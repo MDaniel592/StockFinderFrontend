@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { ServiceContext } from "../../../pages/_app";
 import CookieService from "../../../services/CookieService";
 import { CustomErrors } from "../../../utils/CustomErrors";
-import ErrorMessageAlert from "../../alerts/ErrorMessageAlert";
+import ErrorMessageAlert from "../../Alerts/ErrorMessageAlert";
 import SuccessMessageAlert from "../../alerts/SuccessMessageAlert";
 
 export default function PasswordResetForm({ userData }) {

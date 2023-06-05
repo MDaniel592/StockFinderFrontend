@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { ServiceContext } from "../../../pages/_app";
 import CookieService from "../../../services/CookieService";
-import ErrorMessageAlert from "../../alerts/ErrorMessageAlert";
+import ErrorMessageAlert from "../../Alerts/ErrorMessageAlert";
 
 export default function UserDelete({ userData }) {
     const router = useRouter();

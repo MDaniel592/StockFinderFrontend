@@ -2,7 +2,7 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 import React, { useContext, useRef, useState } from "react";
 import { ServiceContext } from "../../pages/_app";
 import { CustomErrors } from "../../utils/CustomErrors";
-import ErrorMessageAlert from "../alerts/ErrorMessageAlert";
+import ErrorMessageAlert from "../Alerts/ErrorMessageAlert";
 
 export default function LoginStep({ handleChange, values, onLoginSuccess }) {
   const { authService } = useContext(ServiceContext);
