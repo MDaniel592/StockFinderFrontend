@@ -101,7 +101,7 @@ export default function LoginStep({ handleChange, values, onLoginSuccess }) {
             padding: 8px;
             margin: 0.3rem 0 1rem;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            borderRadius: 4px;
             color: black;
           }
           .error {

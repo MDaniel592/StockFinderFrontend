@@ -150,7 +150,7 @@ export default function TelegramEmailCodesStep({ handleChange, prevStep, values 
           input {
             padding: 8px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            borderRadius: 4px;
             color: black;
           }
           .error {
