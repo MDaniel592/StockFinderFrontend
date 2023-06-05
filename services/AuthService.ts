@@ -28,6 +28,25 @@ export default class AuthService {
     return Promise.resolve({ email: userData.email, telegram: userData.telegram });
   }
 
+  async clientValidateCookie(): Promise<LoginResponse> {
+
+    let token = CookieService.getCookie("StockFinder")
+    if (!token) return Promise.resolve({ error: CustomErrors.TOKEN_NOT_VALID });
+
+    let response = await fetch(`${process.env.NEXT_API}/auth/validate-token`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token }),
+    });
+    if (!response) return Promise.resolve({ error: CustomErrors.TOKEN_NOT_VALID });
+
+    let jsonResponse = await response.json();
+    if (!response.ok) return Promise.resolve({ error: jsonResponse.error });
+
+    let tokenData: any = jwt.decode(token);
+    return Promise.resolve({ userData: { email: tokenData.email, telegram: tokenData.telegram, role: tokenData.role } });
+  }
+
   async validateCookie({ req, res }: any): Promise<LoginResponse> {
     const cookies = new Cookies(req, res);
 
