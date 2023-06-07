@@ -4,7 +4,7 @@ import { ServiceContext } from "../../../pages/_app";
 import CookieService from "../../../services/CookieService";
 import { CustomErrors } from "../../../utils/CustomErrors";
 import ErrorMessageAlert from "../../Alerts/ErrorMessageAlert";
-import SuccessMessageAlert from "../../alerts/SuccessMessageAlert";
+import SuccessMessageAlert from "../../Alerts/SuccessMessageAlert";
 
 export default function PasswordResetForm({ userData }) {
   const router = useRouter();
