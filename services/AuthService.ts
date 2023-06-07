@@ -29,22 +29,25 @@ export default class AuthService {
   }
 
   async clientValidateCookie(): Promise<LoginResponse> {
+    try {
+      let token = CookieService.getCookie("StockFinder")
+      if (!token) return Promise.resolve({ error: CustomErrors.TOKEN_NOT_VALID });
 
-    let token = CookieService.getCookie("StockFinder")
-    if (!token) return Promise.resolve({ error: CustomErrors.TOKEN_NOT_VALID });
+      let response = await fetch(`${process.env.NEXT_API}/auth/validate-token`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      if (!response) return Promise.resolve({ error: CustomErrors.TOKEN_NOT_VALID });
 
-    let response = await fetch(`${process.env.NEXT_API}/auth/validate-token`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token }),
-    });
-    if (!response) return Promise.resolve({ error: CustomErrors.TOKEN_NOT_VALID });
+      let jsonResponse = await response.json();
+      if (!response.ok) return Promise.resolve({ error: jsonResponse.error });
 
-    let jsonResponse = await response.json();
-    if (!response.ok) return Promise.resolve({ error: jsonResponse.error });
-
-    let tokenData: any = jwt.decode(token);
-    return Promise.resolve({ userData: { email: tokenData.email, telegram: tokenData.telegram, role: tokenData.role } });
+      let tokenData: any = jwt.decode(token);
+      return Promise.resolve({ userData: { email: tokenData.email, telegram: tokenData.telegram, role: tokenData.role } });
+    } catch (error) {
+      return Promise.reject();
+    }
   }
 
   async validateCookie({ req, res }: any): Promise<LoginResponse> {
