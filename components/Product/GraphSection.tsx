@@ -92,7 +92,8 @@ export default function GraphSection({ historicalData }: { historicalData: Chart
                     ...dataset,
                     borderColor: colorSelected,
                     backgroundColor: colorSelected,
-                    pointHoverRadius: 8,
+                    pointHoverRadius: 6,
+                    pointRadius: 2,
                 }
             }),
         };
