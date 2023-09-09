@@ -66,25 +66,29 @@ export default function CategoryPageCPUCooler({ data_recv }) {
   // Chipset
   const socketDefault = {
     // NVIDIA
-    "GeForce RTX 4090": false, "GeForce RTX 4080": false, "GeForce RTX 4070 Ti": false, "GeForce RTX 4070": false, "GeForce RTX 4060 Ti": false,
+    "GeForce RTX 4090": false, "GeForce RTX 4080": false, "GeForce RTX 4070 Ti": false, "GeForce RTX 4070": false, 
+    "GeForce RTX 4060 Ti": false, "GeForce RTX 4060": false,
     "GeForce RTX 3060": false, "GeForce RTX 3060 Ti": false, "GeForce RTX 3060 Ti LHR": false, "GeForce RTX 3070": false,
     "GeForce RTX 3070 LHR": false, "GeForce RTX 3070 Ti": false, "GeForce RTX 3080 10GB": false, "GeForce RTX 3080 10GB LHR": false,
     "GeForce RTX 3080 12GB": false, "GeForce RTX 3080 Ti": false, "GeForce RTX 3090": false, "GeForce RTX 3090 LHR": false,
     "GeForce RTX 3090 Ti": false,
     // AMD
-    "Radeon RX 7900 XTX": false, "Radeon RX 7900 XT": false, "Radeon RX 7600": false,
+    "Radeon RX 7900 XTX": false, "Radeon RX 7900 XT": false, "Radeon RX 7800 XT": false, "Radeon RX 7700 XT": false,
+    "Radeon RX 7600": false,
     "Radeon RX 6600": false, "Radeon RX 6600 XT": false, "Radeon RX 6700": false, "Radeon RX 6700 XT": false,
     "Radeon RX 6800": false, "Radeon RX 6800 XT": false, "Radeon RX 6900 XT": false,
   };
   const defaultSocketList = {
     // NVIDIA
-    "GeForce RTX 4090": true, "GeForce RTX 4080": true, "GeForce RTX 4070 Ti": false, "GeForce RTX 4070": false, "GeForce RTX 4060 Ti": false,
+    "GeForce RTX 4090": true, "GeForce RTX 4080": true, "GeForce RTX 4070 Ti": false, "GeForce RTX 4070": false, 
+    "GeForce RTX 4060 Ti": false, "GeForce RTX 4060": false,
     "GeForce RTX 3060": false, "GeForce RTX 3060 Ti": false, "GeForce RTX 3060 Ti LHR": true, "GeForce RTX 3070": false,
     "GeForce RTX 3070 LHR": false, "GeForce RTX 3070 Ti": false, "GeForce RTX 3080 10GB": false, "GeForce RTX 3080 10GB LHR": false,
     "GeForce RTX 3080 12GB": false, "GeForce RTX 3080 Ti": false, "GeForce RTX 3090": false, "GeForce RTX 3090 LHR": false,
     "GeForce RTX 3090 Ti": false,
     // AMD
-    "Radeon RX 7900 XTX": true, "Radeon RX 7900 XT": true, "Radeon RX 7600": false,
+    "Radeon RX 7900 XTX": true, "Radeon RX 7900 XT": true, "Radeon RX 7800 XT": false, "Radeon RX 7700 XT": false,
+    "Radeon RX 7600": false,
     "Radeon RX 6600": false, "Radeon RX 6600 XT": false, "Radeon RX 6700": false, "Radeon RX 6700 XT": false,
     "Radeon RX 6800": false, "Radeon RX 6800 XT": true, "Radeon RX 6900 XT": false,
   }

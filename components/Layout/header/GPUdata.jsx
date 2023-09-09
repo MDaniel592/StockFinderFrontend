@@ -65,11 +65,15 @@ export const generations = [
         name: "RTX4070",
         href: "/stock/RTX4070",
         img: "/images/components/GV-Gaming.webp",
-      }
-      ,
+      },
       {
         name: "RTX4060TI",
         href: "/stock/RTX4060TI",
+        img: "/images/components/GV-Gaming.webp",
+      },
+      {
+        name: "RTX4060",
+        href: "/stock/RTX4060",
         img: "/images/components/GV-Gaming.webp",
       }
     ]
@@ -87,7 +91,17 @@ export const generations = [
         name: "RX7900XT",
         href: "/stock/RX7900XT",
         img: "/images/categories/RX6000.webp",
-      },      
+      },   
+      {
+        name: "RX7800XT",
+        href: "/stock/RX7800XT",
+        img: "/images/categories/RX6000.webp",
+      },
+      {
+        name: "RX7700XT",
+        href: "/stock/RX7700XT",
+        img: "/images/categories/RX6000.webp",
+      },   
       {
         name: "RX7600",
         href: "/stock/RX7600",
