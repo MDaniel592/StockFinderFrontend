@@ -114,51 +114,49 @@ export default function ProductPage({ data }) {
     return "";
   }
 
-  function getSpecsData() {
-    if (Object.keys(data["specifications"]).length !== 0) {
-      let specList = [];
-
-      if (data["refurbished"] === true) {
-        let specElement = <CustomPill key="specs-list-reacondicionado" textToShow="Reacondicionado" />;
-        specList.push(specElement);
-      }
-
-
-      for (let item in data["specifications"]) {
-        let key = "specs-list-" + item;
-        if (data["specifications"][item].toUpperCase() == "NO" || data["specifications"][item] == undefined) {
-          continue;
-        } else if (item === 'Refrigeración Líquida' && data["specifications"][item] === 'true') {
-          let specElement = <CustomPill key={key} textToShow="Refrigeración Líquida" type="INFO" />;
-          specList.push(specElement);
-          continue
-        } else if (item === 'Soporte Procesador' || item === 'Formato Placa Base' || item === 'Conexiones') {
-          let value = data["specifications"][item].replace("[", "").replace("]", "").replaceAll('"', "").replaceAll(',', " | ")
-          let specElement = <CustomPill key={key} textToShow={item + ': ' + value} type="INFO" />;
-          specList.push(specElement);
-          continue
-        }
-
-        if (productInfo.category == 'Chassis' || productInfo.category == 'CPU Cooler' || productInfo.category == 'GPU') {
-          let specElement;
-          if (item === 'Altura' || item === 'Anchura' || item === 'Longitud') {
-            specElement = <CustomPill key={key} textToShow={item + ': ' + data["specifications"][item]} type="INFO" property='hidden sm:block' />;
-          } else {
-            specElement = <CustomPill key={key} textToShow={item + ': ' + data["specifications"][item]} type="INFO" />;
-          }
-
-          specList.push(specElement);
-          continue
-        }
-
-        let specElement = <CustomPill key={key} textToShow={data["specifications"][item]} type="INFO" />;
-        specList.push(specElement);
-      }
-      return specList;
-    }
-
-    return;
+  function generateSpecElement(key, value, type = "INFO", extraProperty = "") {
+    return (
+      <CustomPill key={key} textToShow={value} type={type} property={extraProperty} />
+    );
   }
+  
+  function formatSpecValue(item, value) {
+    if (item === "Tamaño") return value + '"';
+    if (item === "Tasa de refresco") return value + "Hz";
+    if (item === "Soporte Procesador" || item === "Formato Placa Base" || item === "Conexiones") {
+      return value.replace("[", "").replace("]", "").replaceAll('"', "").replaceAll(",", " | ");
+    }
+    return value;
+  }
+  
+  function getSpecsData() {
+    const specifications = data["specifications"];
+    const isRefurbished = data["refurbished"] === true;
+    const specList = [];
+  
+    if (isRefurbished) specList.push(generateSpecElement("specs-list-reacondicionado", "Reacondicionado"));
+  
+    for (const item in specifications) {
+      const key = "specs-list-" + item;
+      const value = specifications[item];
+  
+      if (value.toUpperCase() === "NO" || value === undefined) continue;
+  
+      let specValue = formatSpecValue(item, value);
+      if (specValue.toUpperCase() === "YES") specValue = 'Sí';
+
+      if ((productInfo.category === "Chassis" || productInfo.category === "CPU Cooler" || productInfo.category === "GPU") &&
+          (item === "Altura" || item === "Anchura" || item === "Longitud")) {
+        specValue += " (hidden sm:block)";
+      }
+  
+      const specElement = generateSpecElement(key, item + ": " + specValue, "INFO");
+      specList.push(specElement);
+    }
+  
+    return specList;
+  }
+  
 
   function getText() {
     return (

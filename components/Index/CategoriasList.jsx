@@ -1,43 +1,59 @@
-import Link from 'next/link';
-import { generations, solutions } from "/components/Layout/header/GPUdata";
+import Link from 'next/link'
+import { generations, solutions } from '/components/Layouts/header/GPUdata'
 
-export default function CategoriasList({ }) {
-    let link_class = 'hover:underline text-left text-blue-500 text-xxs lg:text-base';
+export default function CategoriasList({}) {
+  let link_class =
+    'hover:underline text-left text-blue-500 text-xxs lg:text-base'
 
-    return (
-        <section className="flex flex-wrap gap-4 sm:justify-left default-w-space">
-            <div className="info mb-4 w-full md:w-fit md:mb-auto">
-
-                <h1 id="INFORMACION" className="text-xl sm:text-3xl font-semibold mt-4">Listado de categorías</h1>
-                <div className="section-title-separator bg-blue-800 w-8 rounded-full mt-1 mb-4 h-2"></div>
-                <div className="grid">
-                    <span className="font-semibold text-base lg:text-lg mb-2 border-b border-gray-500">CATEGORIAS</span>
-                    <ul className="pl-10 grid justify-start list-disc">
-                        {solutions.map((value) => {
-                            return (<li><Link href={value.href} className={link_class}>{value.name}</Link></li>);
-                        })}
-                    </ul>
-                </div>
-                <div className="grid mt-4">
-                    <span className="font-semibold text-base lg:text-lg mb-2 border-b border-gray-500">STOCK DE PRODUCTOS</span>
-                    {generations.map((value) => {
-                        return (
-                            <div className='ml-4'>
-                                <span className="font-semibold text-xs lg:text-base mb-2 border-b border-gray-500">{value.name}</span>
-                                <ul className="pl-10 grid justify-start list-disc">
-                                    {value.values.map((second_value) => {
-                                        return (<li><Link href={second_value.href} className={link_class}>{second_value.name}</Link></li>);
-                                    })}
-                                </ul>
-                            </div>
-
-                        )
-                    })}
-                </div>
-            </div>
-
-
-        </section>
-
-    );
+  return (
+    <section className="flex flex-wrap gap-4 sm:justify-left default-w-space">
+      <div className="info mb-4 w-full md:w-fit md:mb-auto">
+        <h1 id="INFORMACION" className="text-xl sm:text-3xl font-semibold mt-4">
+          Listado de categorías
+        </h1>
+        <div className="section-title-separator bg-blue-800 w-8 rounded-full mt-1 mb-4 h-2"></div>
+        <div className="grid">
+          <span className="font-semibold text-base lg:text-lg mb-2 border-b border-gray-500">
+            CATEGORIAS
+          </span>
+          <ul className="pl-10 grid justify-start list-disc">
+            {solutions.map(value => {
+              return (
+                <li>
+                  <Link href={value.href} className={link_class}>
+                    {value.name}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        <div className="grid mt-4">
+          <span className="font-semibold text-base lg:text-lg mb-2 border-b border-gray-500">
+            STOCK DE PRODUCTOS
+          </span>
+          {generations.map(value => {
+            return (
+              <div className="ml-4">
+                <span className="font-semibold text-xs lg:text-base mb-2 border-b border-gray-500">
+                  {value.name}
+                </span>
+                <ul className="pl-10 grid justify-start list-disc">
+                  {value.values.map(second_value => {
+                    return (
+                      <li>
+                        <Link href={second_value.href} className={link_class}>
+                          {second_value.name}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
 }

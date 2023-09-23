@@ -49,7 +49,7 @@ export default function AuthSection({ userData }) {
   }
   return (
     <React.Fragment>
-      <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+      <div className="z-20 hidden md:flex items-center justify-end md:flex-1 lg:w-0">
         <Link href="/login" className="text-base font-semibold text-white hover:text-blue-500">
           Iniciar sesión
         </Link>
@@ -60,7 +60,7 @@ export default function AuthSection({ userData }) {
           Registrarse
         </Link>
       </div>
-      <div className="flex justify-end md:hidden text-right align-middle">
+      <div className="z-20 flex justify-end md:hidden text-right align-middle">
         <UserPanelAccessIcon img="/images/user-icon.png"></UserPanelAccessIcon>
       </div>
     </React.Fragment>

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import LoginStep from "./LoginStep";
+import React, { Component } from 'react'
+import LoginStep from './LoginStep'
 
 export default class LoginForm extends Component {
   /**
@@ -12,19 +12,19 @@ export default class LoginForm extends Component {
 
   state = {
     step: 1,
-    email: "",
-    password: "",
-    hcaptcha: "",
-  };
+    email: '',
+    password: '',
+    hcaptcha: ''
+  }
 
-  handleChange = (input) => (changeEvent) => {
-    this.setState({ [input]: changeEvent.target.value });
-  };
+  handleChange = input => changeEvent => {
+    this.setState({ [input]: changeEvent.target.value })
+  }
 
   render() {
-    const { step } = this.state;
-    const { email, password, hcaptcha } = this.state;
-    const values = { email, password, hcaptcha };
+    const { step } = this.state
+    const { email, password, hcaptcha } = this.state
+    const values = { email, password, hcaptcha }
     switch (step) {
       case 1:
         return (
@@ -33,9 +33,9 @@ export default class LoginForm extends Component {
             values={values}
             onLoginSuccess={this.props.onLoginSuccess}
           ></LoginStep>
-        );
+        )
       default:
-        return <React.Fragment></React.Fragment>;
+        return <React.Fragment></React.Fragment>
     }
   }
 }

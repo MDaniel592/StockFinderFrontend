@@ -4,11 +4,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prettier": "prettier -write .",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
+    "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@hcaptcha/react-hcaptcha": "^1.1.1",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
@@ -29,6 +32,7 @@
     "eslint-plugin-react-hooks": "^5.0.0-next-d1e35c703-20221110",
     "express": "^4.17.3",
     "framer-motion": "^6.5.1",
+    "gsap": "^3.12.2",
     "http-proxy-middleware": "^2.0.3",
     "js-cookie": "^3.0.1",
     "jsonwebtoken": "^9.0.0",
@@ -46,6 +50,7 @@
     "react-window": "^1.8.8",
     "react-window-infinite-loader": "^1.0.8",
     "requirements": "^1.4.1",
+    "sass": "^1.68.0",
     "sweetalert2": "^11.4.8",
     "sweetalert2-react-content": "^5.0.0",
     "swiper": "^8.3.2",

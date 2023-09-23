@@ -22,15 +22,18 @@ html {
   background-color: rgb(107 114 128);
 }
 #main-content > section {
-  /* @apply px-4 lg:px-16 w-full mt-1; */
   @apply w-full;
 }
-/* main > section + section {
-  margin-top: 1em;
-} */
 
 .preguntas > .pregunta + .pregunta {
   margin-top: 1em;
+}
+
+#main-content {
+  background-image: url('/images/xbox_controller.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #builder-section {
@@ -78,6 +81,9 @@ article.product.selected{
 }
 
 
+.text-url {
+  @apply hover:text-blue-500 hover:underline
+}
 
 .table-text-xs {
   @apply tracking-tighter text-xs font-medium font-sans text-neutral-300;
@@ -183,4 +189,8 @@ article.product.selected{
 .btn.error-small,
 .as-btn.error-small{
   @apply px-2 py-1 rounded-md text-white bg-transparent border border-2 border-error hover:bg-error-dark hover:border-error-dark;
+}
+
+.btn-price{
+  @apply flex items-center justify-center lg:px-3 lg:py-2 border border-transparent text-sm leading-6 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-600 focus:outline-none transition duration-150 ease-in-out hover:bg-white hover:text-blue-500
 }

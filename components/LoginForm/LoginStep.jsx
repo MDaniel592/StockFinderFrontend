@@ -42,7 +42,7 @@ export default function LoginStep({ handleChange, values, onLoginSuccess }) {
         <label>
           <span className="text-center">Usuario</span>
           <input
-            className="text-white"
+            className="text-white rounded-lg"
             type="text"
             name="username"
             placeholder="Email"
@@ -55,7 +55,7 @@ export default function LoginStep({ handleChange, values, onLoginSuccess }) {
         <label>
           <span className="text-center">Contraseña</span>
           <input
-            className="text-white"
+            className="text-white rounded-lg"
             type="password"
             name="password"
             placeholder="Contraseña"
@@ -72,11 +72,14 @@ export default function LoginStep({ handleChange, values, onLoginSuccess }) {
             ¿Olvidaste la contraseña?
           </a>
         </div>
-        <HCaptcha
-          sitekey={web_sitekey}
-          onVerify={(token, ekey) => handleVerificationSuccess(token, ekey)}
-          ref={captchaRef}
-        />
+        <div className="rounded-lg border-white border-4">
+          <HCaptcha
+            sitekey={web_sitekey}
+            onVerify={(token, ekey) => handleVerificationSuccess(token, ekey)}
+            ref={captchaRef}
+          />
+        </div>
+
         <ErrorMessageAlert hasError={errorMessage !== undefined} errorText={errorMessage}></ErrorMessageAlert>
         <div className="grid place-items-center my-2">
           <button

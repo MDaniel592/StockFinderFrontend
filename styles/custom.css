@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind forms;
+
+
+.title_text {
+    @apply gap-2 text-center text-lg font-semibold sm:text-2xl my-4 ;
+}
+
+
+
+.image_text {
+@apply text-center text-lg sm:text-2xl my-4;
+}

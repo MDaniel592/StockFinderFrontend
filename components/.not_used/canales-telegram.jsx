@@ -1,6 +1,5 @@
 import React from "react";
 import Canales from "../Canales";
-import CustomLayout from "../Layout/CustomLayout";
 import AuthService from "../../services/AuthService";
 
 export default function Home({ data, userData }) {
@@ -10,9 +9,7 @@ export default function Home({ data, userData }) {
 
   return (
     <React.Fragment>
-      <CustomLayout userData={userData} title_text={"Canales de Telegram"}>
-        <Canales data={data}> </Canales>
-      </CustomLayout>
+      <Canales data={data}> </Canales>
     </React.Fragment>
   );
 }
@@ -20,6 +17,8 @@ export default function Home({ data, userData }) {
 
 // Server side rendering
 export async function getServerSideProps(context) {
+  const title = "Canales de Telegram"
+
   let authService = new AuthService();
   const result = await authService.validateCookie(context);
   let userData = null;
@@ -28,5 +27,5 @@ export async function getServerSideProps(context) {
   const res = await fetch(process.env.BACKEND_API_URL + "/telegram_channels");
   const data = await res.json()
 
-  return { props: { data, userData } };
+  return { props: { data, userData, title } };
 }
