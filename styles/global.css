@@ -30,7 +30,7 @@ html {
 }
 
 #main-content {
-  background-image: url('/images/xbox_controller.webp');
+  background-image: url('/images/xbox_controller_medium.webp');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
