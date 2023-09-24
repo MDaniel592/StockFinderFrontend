@@ -111,7 +111,7 @@ export default function UserDelete({ userData }) {
         </button>
         <button
           className="btn-blue-white mb-4 w-48 mx-auto"
-          onClick={router.push('/profile')}
+          onClick={e => router.push('/profile')}
         >
           Volver
         </button>

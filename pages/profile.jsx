@@ -61,7 +61,7 @@ export default function index() {
             <div className="my-4 mx-8">
               <button
                 className="btn-blue-white"
-                onClick={router.push('/profile/new-alert')}
+                onClick={e => router.push('/profile/new-alert')}
               >
                 Nueva alerta
               </button>
@@ -86,7 +86,7 @@ export default function index() {
             <div className="my-2 w-36 mx-auto lg:hidden">
               <button
                 className="btn-blue-white"
-                onClick={router.push('/profile/new-alert')}
+                onClick={e => router.push('/profile/new-alert')}
               >
                 Nueva alerta
               </button>
