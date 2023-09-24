@@ -39,7 +39,10 @@ export default function List({ data }) {
               rel="noreferrer"
             >
               <div className="flex items-center gap-2">
-                <img
+                <Image
+                  width={50}
+                  height={50}
+                  style={{ width: 'auto', height: 'auto' }}
                   alt={value['name']}
                   loading="lazy"
                   src={imageUrl}

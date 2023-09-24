@@ -21,7 +21,10 @@ export default function AvailabilityCard({
     >
       <div className="text-center mx-1 lg:mx-4 grid grid-cols-4 lg:grid-cols-6 gap-4 items-center bg-zinc-700 hover:bg-zinc-600 hover:text-emerald-500 rounded-xl px-2 py-1">
         <div className="lg:col-span-2  flex items-center justify-center">
-          <img
+          <Image
+            width={50}
+            height={50}
+            style={{ width: 'auto', height: 'auto' }}
             loading="lazy"
             src={imageUrl}
             className="h-5 lg:h-7 rounded-sm"

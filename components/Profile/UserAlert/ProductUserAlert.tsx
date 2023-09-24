@@ -185,7 +185,10 @@ export default function ProductUserAlert({
         </button>
 
         <div className="flex gap-2">
-          <img
+          <Image
+            width={50}
+            height={50}
+            style={{ width: 'auto', height: 'auto' }}
             loading="lazy"
             className="rounded-lg w-10"
             src={alert.productData.image}

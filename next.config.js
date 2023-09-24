@@ -2,6 +2,7 @@ const {
   PHASE_DEVELOPMENT_SERVER,
   PHASE_PRODUCTION_SERVER
 } = require('next/constants')
+
 module.exports = phase => {
   let isDev = phase == PHASE_DEVELOPMENT_SERVER
   let domainName = process.env.DOMAIN_NAME
@@ -9,20 +10,7 @@ module.exports = phase => {
   let PORT = process.env.PORT
 
   const images = {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.stockfinder.tech',
-        port: '443',
-        pathname: '/**'
-      },
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3000',
-        pathname: '/**'
-      }
-    ]
+    domains: ['localhost', 'stockfinder.tech', 'images.stockfinder.tech']
   }
 
   const env = {

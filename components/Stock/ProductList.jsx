@@ -62,11 +62,13 @@ export default function ProductList({
                       rel="noreferrer"
                     >
                       <div className="flex items-center gap-2">
-                        <img
+                        <Image
+                          width={50}
+                          height={50}
+                          style={{ width: 'auto', height: 'auto' }}
                           loading="lazy"
                           src={imageUrl}
                           alt={value['images']}
-                          style={{ width: 'auto', height: 'auto' }}
                           className="h-10 w-10 rounded-md"
                         />
                         {name.replace(/(\r\n|\n|\r)/gm, '')}
@@ -83,7 +85,10 @@ export default function ProductList({
               <li className="block lg:hidden p-1 stock-text">
                 <div className="bg-zinc-700 hover:bg-zinc-600 hover:text-blue-500 rounded-xl px-2 py-1">
                   <div className="flex gap-2 items-center">
-                    <img
+                    <Image
+                      width={50}
+                      height={50}
+                      style={{ width: 'auto', height: 'auto' }}
                       src={imageUrl}
                       alt={name}
                       loading="lazy"

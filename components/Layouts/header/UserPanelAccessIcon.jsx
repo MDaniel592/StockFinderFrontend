@@ -80,7 +80,10 @@ export default function UserPanelAccessIcon({
                       'group rounded-md text-base font-medium hover:font-bold hover:underline focus:outline-none '
                     )}
                   >
-                    <img
+                    <Image
+                      width={50}
+                      height={50}
+                      style={{ width: 'auto', height: 'auto' }}
                       alt=""
                       loading="lazy"
                       src={img}

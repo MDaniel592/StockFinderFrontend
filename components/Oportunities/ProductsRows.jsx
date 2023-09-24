@@ -27,7 +27,10 @@ export default function ProductsRows({ data, discount }) {
               key={Math.random()}
             >
               <div className="w-80 h-24 flex flex-row text-center rounded-md border-2 border-blue-500 p-2">
-                <img
+                <Image
+                  width={300}
+                  height={300}
+                  style={{ width: 'auto', height: 'auto' }}
                   loading="lazy"
                   alt={row['image']}
                   src={`https://images.stockfinder.tech/${row['image']}`}

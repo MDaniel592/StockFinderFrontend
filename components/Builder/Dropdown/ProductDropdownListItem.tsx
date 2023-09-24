@@ -85,7 +85,10 @@ const MemoProductDropdownListItem = React.memo(
       >
         <div className="grid grid-cols-4 md:flex gap-1 md:gap-2 md:w-[86%] overflow-hidden">
           <div className="image-container my-auto justify-left flex-none">
-            <img
+            <Image
+              width={100}
+              height={100}
+              style={{ width: 'auto', height: 'auto' }}
               className="rounded-lg object-cover h-12 md:h-14 w-12 md:w-14"
               src={
                 product.image

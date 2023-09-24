@@ -429,15 +429,16 @@ export default function EnhancedTable({
                           padding="normal"
                         >
                           <div className="flex">
-                            <img
+                            <Image
                               aria-owns={
                                 open ? 'mouse-over-popover' : undefined
                               }
                               src={imageUrl}
                               loading="lazy"
-                              quality={100}
-                              alt={row['uuid']}
+                              width={50}
+                              height={50}
                               style={{ width: 'auto', height: 'auto' }}
+                              alt={row['uuid']}
                               className="h-8 w-8 rounded-md"
                               aria-haspopup="true"
                               onMouseEnter={handlePopoverOpen}
@@ -465,11 +466,12 @@ export default function EnhancedTable({
                               disableRestoreFocus
                               elevation={0}
                             >
-                              <img
+                              <Image
                                 loading="lazy"
-                                quality={100}
-                                alt={row['uuid']}
+                                width={200}
+                                height={200}
                                 style={{ width: 'auto', height: 'auto' }}
+                                alt={row['uuid']}
                                 src={displayIMG}
                                 onError={onImageNotLoadedError}
                                 className="max-h-44	max-w-xs rounded-xl"

@@ -29,7 +29,10 @@ export default function GPUStockList({ data_nvidia, data_amd }) {
                 'group  rounded-md inline-flex items-center text-base font-medium hover:font-bold hover:underline focus:outline-none hover:text-blue-500'
               )}
             >
-              <img
+              <Image
+                width={50}
+                height={50}
+                style={{ width: 'auto', height: 'auto' }}
                 loading="lazy"
                 alt=""
                 src={img}

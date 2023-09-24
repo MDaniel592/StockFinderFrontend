@@ -9,7 +9,10 @@ export default function ProductItem({ product }: { product: ProductInfo }) {
   return (
     <article className="product py-4 px-2 gap-2 rounded bg-zinc-700 mt-2 md:flex">
       <div className="image-container h-24 max-h-24 flex justify-center md:h-auto md:w-[10%] md:items-center">
-        <img
+        <Image
+          width={300}
+          height={300}
+          style={{ width: 'auto', height: 'auto' }}
           loading="lazy"
           className="rounded object-cover md:h-full"
           src={

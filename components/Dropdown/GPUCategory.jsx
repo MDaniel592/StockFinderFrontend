@@ -30,7 +30,10 @@ export default function GPUCategory({ title, data, img }) {
               >
                 <div className="pt-2 sm:p-4 pb-4 sm:p-4">
                   <div className="relative">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
+                      style={{ width: 'auto', height: 'auto' }}
                       src={item.img}
                       alt={item.name}
                       loading="lazy"
@@ -97,7 +100,10 @@ export default function GPUCategory({ title, data, img }) {
                 'group rounded-md inline-flex items-center focus:outline-none text-url '
               )}
             >
-              <img
+              <Image
+                width={50}
+                height={50}
+                style={{ width: 'auto', height: 'auto' }}
                 loading="lazy"
                 alt=""
                 src={img}

@@ -186,8 +186,8 @@ export default function LinkUserAlert({
 
         <div className="flex gap-2">
           <Image
-            width={40}
-            height={40}
+            width={50}
+            height={50}
             style={{ width: 'auto', height: 'auto' }}
             className="rounded-lg w-10"
             src={alert.productData.image}

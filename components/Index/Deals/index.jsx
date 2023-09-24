@@ -79,7 +79,10 @@ export default function index({ data }) {
                     className="hover:text-blue-500 hover:underline hover:decoration-blue-500"
                   >
                     <div className="flex items-center gap-2 font-medium">
-                      <img
+                      <Image
+                        width={50}
+                        height={50}
+                        style={{ width: 'auto', height: 'auto' }}
                         loading="lazy"
                         alt={name}
                         src={imageUrl}

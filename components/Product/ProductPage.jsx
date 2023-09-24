@@ -38,7 +38,10 @@ export default function ProductPage({ data }) {
 
   const createCarouselItemImage = data => (
     <SwiperSlide key={(Math.random() + 1).toString(36).substring(2)}>
-      <img
+      <Image
+        width={800}
+        height={800}
+        style={{ width: 'auto', height: 'auto' }}
         loading="lazy"
         src={`https://images.stockfinder.tech${data}`}
         alt={data}
@@ -65,8 +68,8 @@ export default function ProductPage({ data }) {
         >
           <SwiperSlide>
             <Image
-              width={500}
-              height={500}
+              width={800}
+              height={800}
               style={{ width: 'auto', height: 'auto' }}
               src={images}
               alt="placeholder"

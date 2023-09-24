@@ -84,7 +84,10 @@ export default function ShortCuts({}) {
               >
                 <Link href={url}>
                   <div className="flex flex-col place-items-center relative p-1">
-                    <img
+                    <Image
+                      width={300}
+                      height={300}
+                      style={{ width: 'auto', height: 'auto' }}
                       loading="lazy"
                       src={image}
                       alt={`${name} Thumbnail`}

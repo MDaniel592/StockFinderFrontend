@@ -145,7 +145,10 @@ export default function EnhancedTable({ data, headCells }) {
                         padding="normal"
                       >
                         <div className="flex">
-                          <img
+                          <Image
+                            width={50}
+                            height={50}
+                            style={{ width: 'auto', height: 'auto' }}
                             loading="lazy"
                             alt={row['uuid']}
                             aria-owns={open ? 'mouse-over-popover' : undefined}
@@ -174,7 +177,10 @@ export default function EnhancedTable({ data, headCells }) {
                             onClose={handlePopoverClose}
                             disableRestoreFocus
                           >
-                            <img
+                            <Image
+                              width={300}
+                              height={300}
+                              style={{ width: 'auto', height: 'auto' }}
                               loading="lazy"
                               alt={row['uuid']}
                               src={displayIMG}
@@ -227,8 +233,8 @@ export default function EnhancedTable({ data, headCells }) {
                         <Link href={availability_url}>
                           <Image
                             alt={row.shop}
-                            width={40}
-                            height={40}
+                            width={50}
+                            height={50}
                             style={{ width: 'auto', height: 'auto' }}
                             src={`/images/logos/shops/${row.shop}.png`}
                             className="max-h-8 w-auto"

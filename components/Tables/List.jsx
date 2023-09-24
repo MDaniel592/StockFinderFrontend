@@ -34,7 +34,10 @@ export default function List({ data, specsKeys, failOverImage = '' }) {
               rel="noreferrer"
             >
               <div className="flex items-center gap-2">
-                <img
+                <Image
+                  width={50}
+                  height={50}
+                  style={{ width: 'auto', height: 'auto' }}
                   loading="lazy"
                   src={imageUrl}
                   alt={value['uuid']}
