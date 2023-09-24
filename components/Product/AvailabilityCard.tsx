@@ -21,10 +21,8 @@ export default function AvailabilityCard({
     >
       <div className="text-center mx-1 lg:mx-4 grid grid-cols-4 lg:grid-cols-6 gap-4 items-center bg-zinc-700 hover:bg-zinc-600 hover:text-emerald-500 rounded-xl px-2 py-1">
         <div className="lg:col-span-2  flex items-center justify-center">
-          <Image
-            width={100}
-            height={100}
-            style={{ width: 'auto', height: 'auto' }}
+          <img
+            loading="lazy"
             src={imageUrl}
             className="h-5 lg:h-7 rounded-sm"
             alt={availability.shopName}
@@ -35,7 +33,7 @@ export default function AvailabilityCard({
             <span className="text-error">Sí</span>
           ) : (
             <span className="text-success">No</span>
-          )}{' '}
+          )}
         </div>
         <div className="">
           {availability.stock ? (
@@ -58,7 +56,7 @@ export default function AvailabilityCard({
               rel="noreferrer"
               className="block p-1 lg:p-2 bg-blue-200 outline outline-2 outline-blue-600 text-blue-600 hover:outline-none hover:text-white hover:bg-blue-600 rounded-md whitespace-nowrap"
             >
-              Comprar{' '}
+              Comprar
             </Link>
           ) : (
             <Link

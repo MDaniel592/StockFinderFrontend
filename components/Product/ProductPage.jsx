@@ -38,10 +38,8 @@ export default function ProductPage({ data }) {
 
   const createCarouselItemImage = data => (
     <SwiperSlide key={(Math.random() + 1).toString(36).substring(2)}>
-      <Image
-        width={500}
-        height={500}
-        style={{ width: 'auto', height: 'auto' }}
+      <img
+        loading="lazy"
         src={`https://images.stockfinder.tech${data}`}
         alt={data}
         className="items-center justify-center mx-auto max-h-40 sm:max-h-60 lg:max-h-[40vh] rounded-xl"
@@ -218,7 +216,7 @@ export default function ProductPage({ data }) {
   }
 
   return (
-    <div className="relative flex items-center justify-center mx-auto p-2 lg:p-8 rounded-xl">
+    <div className="relative flex flex-wrap items-center justify-center mx-auto p-2 lg:p-8 rounded-xl">
       <section className="flex flex-wrap lg:flex-nowrap justify-center gap-4 xl:gap-10">
         <div>
           <h1 className="uppercase text-xl lg:text-3xl font-semibold text-white">

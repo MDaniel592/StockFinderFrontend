@@ -62,9 +62,8 @@ export default function ProductList({
                       rel="noreferrer"
                     >
                       <div className="flex items-center gap-2">
-                        <Image
-                          width={40}
-                          height={40}
+                        <img
+                          loading="lazy"
                           src={imageUrl}
                           alt={value['images']}
                           style={{ width: 'auto', height: 'auto' }}
@@ -84,12 +83,10 @@ export default function ProductList({
               <li className="block lg:hidden p-1 stock-text">
                 <div className="bg-zinc-700 hover:bg-zinc-600 hover:text-blue-500 rounded-xl px-2 py-1">
                   <div className="flex gap-2 items-center">
-                    <Image
+                    <img
                       src={imageUrl}
                       alt={name}
-                      width={40}
-                      height={40}
-                      style={{ width: 'auto', height: 'auto' }}
+                      loading="lazy"
                       className="h-10 w-10 rounded-md"
                     />
 
@@ -101,7 +98,6 @@ export default function ProductList({
                         className="hover:text-blue-500 hover:underline hover:decoration-blue-500"
                       >
                         <p className="leading-none">
-                          {' '}
                           {name.replace(/(\r\n|\n|\r)/gm, '')}
                         </p>
                       </Link>

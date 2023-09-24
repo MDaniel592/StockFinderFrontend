@@ -185,10 +185,8 @@ export default function ProductUserAlert({
         </button>
 
         <div className="flex gap-2">
-          <Image
-            width={40}
-            height={40}
-            style={{ width: 'auto', height: 'auto' }}
+          <img
+            loading="lazy"
             className="rounded-lg w-10"
             src={alert.productData.image}
             alt=""
@@ -201,7 +199,6 @@ export default function ProductUserAlert({
               {alert.productData.productName}
             </a>
             <span className="whitespace-pre">
-              {' '}
               - {alert.productData.productPrice.toFixed(2)} €
             </span>
           </p>

@@ -34,12 +34,11 @@ export default function List({ data, specsKeys, failOverImage = '' }) {
               rel="noreferrer"
             >
               <div className="flex items-center gap-2">
-                <Image
-                  width={30}
-                  height={30}
+                <img
+                  loading="lazy"
                   src={imageUrl}
                   alt={value['uuid']}
-                  className="rounded-md"
+                  className="h-10 w-10 rounded-md"
                 />
                 {value['name'].replace(/(\r\n|\n|\r)/gm, '')}
               </div>

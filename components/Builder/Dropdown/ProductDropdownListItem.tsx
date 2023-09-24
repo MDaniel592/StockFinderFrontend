@@ -68,7 +68,7 @@ const MemoProductDropdownListItem = React.memo(
       >
         {product.availabilities.map(availability => (
           <option value={availability.shopName} key={Math.random()}>
-            {availability.shopName} -{' '}
+            {availability.shopName} -
             {availability.price.toLocaleString('es-ES', {
               style: 'currency',
               currency: 'EUR'
@@ -85,10 +85,7 @@ const MemoProductDropdownListItem = React.memo(
       >
         <div className="grid grid-cols-4 md:flex gap-1 md:gap-2 md:w-[86%] overflow-hidden">
           <div className="image-container my-auto justify-left flex-none">
-            <Image
-              width={40}
-              height={40}
-              style={{ width: 'auto', height: 'auto' }}
+            <img
               className="rounded-lg object-cover h-12 md:h-14 w-12 md:w-14"
               src={
                 product.image

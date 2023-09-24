@@ -84,7 +84,8 @@ export default function ShortCuts({}) {
               >
                 <Link href={url}>
                   <div className="flex flex-col place-items-center relative p-1">
-                    <Image
+                    <img
+                      loading="lazy"
                       src={image}
                       alt={`${name} Thumbnail`}
                       className="bg-google-dark h-28 lg:h-48 w-32 lg:w-48 rounded-md"

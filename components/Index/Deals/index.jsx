@@ -79,12 +79,10 @@ export default function index({ data }) {
                     className="hover:text-blue-500 hover:underline hover:decoration-blue-500"
                   >
                     <div className="flex items-center gap-2 font-medium">
-                      <Image
+                      <img
+                        loading="lazy"
                         alt={name}
                         src={imageUrl}
-                        width={40}
-                        height={40}
-                        style={{ width: 'auto', height: 'auto' }}
                         className="w-8 h-8 rounded-md"
                       />
                       {name.replace(/(\r\n|\n|\r)/gm, '')}

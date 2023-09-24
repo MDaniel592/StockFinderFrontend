@@ -49,12 +49,10 @@ export default function GPUStock({ title, generations }) {
                 'group  rounded-md inline-flex items-center focus:outline-none text-url'
               )}
             >
-              <Image
+              <img
+                loading="lazy"
                 alt=""
                 src={img}
-                width={40}
-                height={40}
-                style={{ width: 'auto', height: 'auto' }}
                 className="w-6 h-6 mr-2 invert"
               />
               <span className="hidden lg:block text-sm font-medium">

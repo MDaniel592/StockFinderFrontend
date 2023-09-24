@@ -27,15 +27,12 @@ export default function ProductsRows({ data, discount }) {
               key={Math.random()}
             >
               <div className="w-80 h-24 flex flex-row text-center rounded-md border-2 border-blue-500 p-2">
-                <Image
-                  width={100}
-                  height={100}
-                  style={{ width: 'auto', height: 'auto' }}
+                <img
+                  loading="lazy"
                   alt={row['image']}
                   src={`https://images.stockfinder.tech/${row['image']}`}
                   className="rounded-md m-auto object-cover"
                   onError={onImageNotLoadedError}
-                  loading="lazy"
                 />
                 <div className="w-64 grid place-content-evenly">
                   <div>
@@ -45,7 +42,7 @@ export default function ProductsRows({ data, discount }) {
                   </div>
                   <div>
                     <p className="font-sans antialiased text-xs font-semibold">
-                      {row['shop'].replace(' Reacondicionados', '')} -{' '}
+                      {row['shop'].replace(' Reacondicionados', '')} -
                       {row['price']} €
                     </p>
                   </div>

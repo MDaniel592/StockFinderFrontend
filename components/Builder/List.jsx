@@ -39,11 +39,9 @@ export default function List({ data }) {
               rel="noreferrer"
             >
               <div className="flex items-center gap-2">
-                <Image
+                <img
                   alt={value['name']}
-                  width={40}
-                  height={40}
-                  style={{ width: 'auto', height: 'auto' }}
+                  loading="lazy"
                   src={imageUrl}
                   className="h-10 w-10 rounded-md"
                 />
@@ -59,7 +57,7 @@ export default function List({ data }) {
               <div className="flex-wrap text-center items-center">
                 <div>Actual</div>
                 <div className={`${text_color}`}>
-                  {value['actual_price'].toFixed(2)} €{' '}
+                  {value['actual_price'].toFixed(2)} €
                 </div>
               </div>
 
