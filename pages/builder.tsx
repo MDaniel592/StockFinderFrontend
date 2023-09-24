@@ -337,7 +337,7 @@ export default function Builder(props: { productsList: any }) {
 
   return (
     <BuilderContext.Provider value={{ onProductSelected, onProductRemoved }}>
-      <section className="default-w-space mt-4 lg:mt-0">
+      <section className="default-w-space pt-4 lg:pt-0">
         <h1 className="text-xl sm:text-3xl font-semibold">
           Configurador de equipos
         </h1>

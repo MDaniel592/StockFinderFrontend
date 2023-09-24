@@ -201,7 +201,6 @@ export default function LinkUserAlert({
               {alert.productData.productName}
             </a>
             <span className="whitespace-pre">
-              {' '}
               - {alert.productData.productPrice.toFixed(2)} €
             </span>
           </p>

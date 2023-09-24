@@ -15,7 +15,7 @@ export default function WarningMessage({ userData }) {
           No puedes registrar alertas.
         </p>
         <p className="text-sm font-semibold">
-          Crea y recibe alertas asociando tu Telegram:{' '}
+          Crea y recibe alertas asociando tu Telegram:
         </p>
         <Link
           className="text-sm  text-blue-500 text-bold underline font-semibold"

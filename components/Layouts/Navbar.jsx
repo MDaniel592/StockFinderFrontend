@@ -18,7 +18,7 @@ function Navbar({ path, userData }) {
             <Link href="/">
               <span className="inline-flex">
                 <Image
-                  className="hover:-rotate-12"
+                  className=""
                   height={40}
                   width={40}
                   src={logoIMG}
