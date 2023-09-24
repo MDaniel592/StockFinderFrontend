@@ -1,5 +1,6 @@
 import React from 'react'
-import ProfileLayout from '../components/Layouts/ProfileLayout'
+import ProfileLayout from '../Layouts/ProfileLayout'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         </span>
 
         <div className="m-4">
-          <img
+          <Image
             src="/gif/spam_example.gif"
             className="rounded-xl"
             alt="IMG"

@@ -1,10 +1,11 @@
 import React from 'react'
-import AuthService from '../services/AuthService'
+import slideUp from './animation'
+import { motion } from 'framer-motion'
 
-export default function AvisoLegal({ userData }) {
+export default function index() {
   return (
-    <React.Fragment>
-      <section className="default-w-space text-xs">
+    <motion.div variants={slideUp} initial="initial" animate={'open'}>
+      <div className="default-w-space text-xs">
         <div className="mx-auto text-justify">
           <h1 className="text-3xl">Aviso Legal</h1>
           <section className="mt-4">
@@ -198,20 +199,7 @@ export default function AvisoLegal({ userData }) {
             </p>
           </section>
         </div>
-      </section>
-    </React.Fragment>
+      </div>
+    </motion.div>
   )
-}
-
-// Server side rendering
-export async function getServerSideProps(context) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-  return {
-    props: {
-      userData
-    }
-  }
 }

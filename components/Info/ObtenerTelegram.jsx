@@ -1,8 +1,8 @@
 import React from 'react'
-import ProfileLayout from '../components/Layouts/ProfileLayout'
-import AuthService from '../services/AuthService'
+import ProfileLayout from '../Layouts/ProfileLayout'
+import Image from 'next/image'
 
-export default function Home({ userData }) {
+export default function Home() {
   return (
     <React.Fragment>
       <ProfileLayout maxWidth={'sm'}>
@@ -21,7 +21,10 @@ export default function Home({ userData }) {
         </a>
 
         <div className="m-4">
-          <img
+          <Image
+            width={40}
+            height={40}
+            style={{ width: 'auto', height: 'auto' }}
             src="/gif/telegram_example.gif"
             className="rounded-xl"
             alt="IMG"
@@ -38,17 +41,4 @@ export default function Home({ userData }) {
       </ProfileLayout>
     </React.Fragment>
   )
-}
-
-// Server side rendering
-export async function getServerSideProps(context) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-  return {
-    props: {
-      userData
-    }
-  }
 }

@@ -1,9 +1,15 @@
 import React from 'react'
-import AuthService from '../services/AuthService'
+import slideUp from './animation'
+import { motion } from 'framer-motion'
 
-export default function PoliticaPrivacidad({ userData }) {
+export default function PoliticaPrivacidad() {
   return (
-    <section className="default-w-space text-xs">
+    <motion.div
+      className="default-w-space text-xs"
+      variants={slideUp}
+      initial="initial"
+      animate={'open'}
+    >
       <div className="mx-auto text-justify">
         <h1 className="text-3xl">Política de Privacidad</h1>
         <div className="section-title-separator bg-blue-800 w-8 rounded-full mt-1 mb-4 h-2"></div>
@@ -113,19 +119,6 @@ export default function PoliticaPrivacidad({ userData }) {
           </p>
         </section>
       </div>
-    </section>
+    </motion.div>
   )
-}
-
-// Server side rendering
-export async function getServerSideProps(context) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-  return {
-    props: {
-      userData
-    }
-  }
 }
