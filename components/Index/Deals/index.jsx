@@ -5,6 +5,7 @@ import React from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { slideRight, slideLeft, slideUp } from './animation.js'
+import Image from 'next/image.js'
 
 export default function index({ data }) {
   const container = useRef(null)
@@ -78,7 +79,14 @@ export default function index({ data }) {
                     className="hover:text-blue-500 hover:underline hover:decoration-blue-500"
                   >
                     <div className="flex items-center gap-2 font-medium">
-                      <img src={imageUrl} className="h-8 w-8 rounded-md" />
+                      <Image
+                        alt={name}
+                        src={imageUrl}
+                        width={40}
+                        height={40}
+                        style={{ width: 'auto', height: 'auto' }}
+                        className="w-8 h-8 rounded-md"
+                      />
                       {name.replace(/(\r\n|\n|\r)/gm, '')}
                     </div>
                   </Link>
@@ -96,11 +104,11 @@ export default function index({ data }) {
       </>
     )
   }
-  function getListPC() {
+  function getList() {
     return (
       <div className="overflow-hidden grid grid-cols-1 lg:grid-cols-2 text-center gap-1 mt-4">
         <motion.div
-          className="relative title_text bg-zinc-800 rounded-xl"
+          className="relative title_text bg-zinc-800 bg-opacity-90 rounded-xl"
           variants={slideRight}
           initial="initial"
           animate={isInView ? 'open' : 'closed'}
@@ -115,7 +123,7 @@ export default function index({ data }) {
         </motion.div>
 
         <motion.div
-          className="relative title_text bg-zinc-800 rounded-xl	"
+          className="relative title_text bg-zinc-800 bg-opacity-90 rounded-xl	"
           variants={slideLeft}
           initial="initial"
           animate={isInView ? 'open' : 'closed'}
@@ -132,20 +140,6 @@ export default function index({ data }) {
     )
   }
 
-  function getListPhone() {
-    return (
-      <div className="block md:hidden">
-        <p className="text-lg text-center font-semibold text-success mt-4 -mb-2">
-          NVIDIA
-        </p>
-        <List sx={{ width: '100%' }}>{getItems(nvidia_data)}</List>
-        <p className="text-lg text-center font-semibold text-error mt-4 -mb-2">
-          AMD
-        </p>
-        <List sx={{ width: '100%' }}>{getItems(amd_data)}</List>
-      </div>
-    )
-  }
   return (
     <motion.section
       style={{ scale, opacity }}
@@ -164,10 +158,7 @@ export default function index({ data }) {
 
       <div className="section-title-separator bg-blue-500 w-16 sm:w-32 rounded-full -mt-2 mb-4 h-2 mx-auto"></div>
 
-      <div className="mx-auto px-2 sm:px-4">
-        {getListPC()}
-        {/* {getListPhone()} */}
-      </div>
+      <div className="mx-auto px-2 sm:px-4">{getList()}</div>
     </motion.section>
   )
 }

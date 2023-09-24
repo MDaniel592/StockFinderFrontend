@@ -2,7 +2,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
 import { Fragment } from 'react'
-
+import Image from 'next/image'
 import { generations } from '../Layouts/header/GPUdata'
 
 function classNames(...classes) {
@@ -30,9 +30,12 @@ export default function GPUCategory({ title, data, img }) {
               >
                 <div className="pt-2 sm:p-4 pb-4 sm:p-4">
                   <div className="relative">
-                    <img
+                    <Image
                       src={item.img}
                       alt={item.name}
+                      width={100}
+                      height={100}
+                      style={{ width: 'auto', height: 'auto' }}
                       className="w-12 lg:w-24 h-12 lg:h-24 mx-auto"
                     />
                     <p className="absolute truncate text-xxs font-medium left-1/2 -translate-x-1/2 text-center w-20 sm:w-32 ">
@@ -96,7 +99,14 @@ export default function GPUCategory({ title, data, img }) {
                 'group rounded-md inline-flex items-center focus:outline-none text-url '
               )}
             >
-              <img alt="" src={img} className="h-6 w-6 mr-2 invert" />
+              <Image
+                width={40}
+                height={40}
+                style={{ width: 'auto', height: 'auto' }}
+                alt=""
+                src={img}
+                className="h-6 w-6 mr-2 invert"
+              />
               <span className="hidden lg:block text-sm font-medium">
                 {title}
               </span>

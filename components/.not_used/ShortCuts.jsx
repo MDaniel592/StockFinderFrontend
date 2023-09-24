@@ -1,91 +1,101 @@
-import { motion } from "framer-motion";
-import Link from "next/link";
-
-export default function ShortCuts({ }) {
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import Image from 'next/image'
+export default function ShortCuts({}) {
   var IMAGES_DATA = [
     {
       id: 0,
-      name: "Procesadores",
-      image: "images/components/AMD-Ryzen-7000.png",
-      url: "/categorias/procesadores",
+      name: 'Procesadores',
+      image: 'images/components/AMD-Ryzen-7000.png',
+      url: '/categorias/procesadores'
     },
     {
       id: 1,
-      name: "Tarjetas Gráficas",
-      image: "images/components/asus.png",
-      url: "/categorias/tarjetas-graficas",
+      name: 'Tarjetas Gráficas',
+      image: 'images/components/asus.png',
+      url: '/categorias/tarjetas-graficas'
     },
     {
       id: 2,
-      name: "Placas Base",
-      image: "images/categories/motherboard.webp",
-      url: "/categorias/placas-base",
-    },
-  ];
+      name: 'Placas Base',
+      image: 'images/categories/motherboard.webp',
+      url: '/categorias/placas-base'
+    }
+  ]
 
   var IMAGES_DATA2 = [
     {
       id: 5,
-      name: "Fuentes alimentación",
-      image: "images/categories/PSU.webp",
-      url: "/categorias/fuentes-alimentacion",
+      name: 'Fuentes alimentación',
+      image: 'images/categories/PSU.webp',
+      url: '/categorias/fuentes-alimentacion'
     },
     {
       id: 6,
-      name: "Memorias RAM",
-      image: "images/categories/RAM.webp",
-      url: "/categorias/memoria-ram",
+      name: 'Memorias RAM',
+      image: 'images/categories/RAM.webp',
+      url: '/categorias/memoria-ram'
     },
     {
       id: 7,
-      name: "Almacenamiento",
-      image: "images/categories/SSD.webp",
-      url: "/categorias/almacenamiento",
+      name: 'Almacenamiento',
+      image: 'images/categories/SSD.webp',
+      url: '/categorias/almacenamiento'
     },
     {
       id: 8,
-      name: "Torres",
-      image: "images/categories/torre.webp",
-      url: "/categorias/torres",
+      name: 'Torres',
+      image: 'images/categories/torre.webp',
+      url: '/categorias/torres'
     },
     {
       id: 9,
-      name: "Disipadores CPU",
-      image: "images/categories/disipador.webp",
-      url: "/categorias/disipadores-cpu",
-    },
-  ];
+      name: 'Disipadores CPU',
+      image: 'images/categories/disipador.webp',
+      url: '/categorias/disipadores-cpu'
+    }
+  ]
 
-  var TOTAL_IMAGES = IMAGES_DATA.concat(IMAGES_DATA2);
+  var TOTAL_IMAGES = IMAGES_DATA.concat(IMAGES_DATA2)
 
   return (
     <section>
-      <h3 className="text-3xl font-semibold text-center">¿Qué producto estás buscando?</h3>
+      <h3 className="text-3xl font-semibold text-center">
+        ¿Qué producto estás buscando?
+      </h3>
       <div className="section-title-separator bg-blue-500 w-16 sm:w-32 rounded-full mt-1 mb-4 h-2 mx-auto"></div>
 
       <div className="container mx-auto">
         <ul className="flex xl:grid flex-wrap xl:grid-cols-4 justify-center ">
-          {TOTAL_IMAGES.map((result) => {
-            const { id, name, image, url } = result;
+          {TOTAL_IMAGES.map(result => {
+            const { id, name, image, url } = result
             return (
-              <motion.div key={id} className="custom-card"
+              <motion.div
+                key={id}
+                className="custom-card"
                 whileHover={{
-                  position: "relative",
+                  position: 'relative',
                   zIndex: 1,
-                  background: "bg-google-dark",
+                  background: 'bg-google-dark',
                   scale: [1, 1.2, 1.2],
                   rotate: [0, 5, -5, 0],
-                  transition: { duration: 0.5 },
+                  transition: { duration: 0.5 }
                 }}
               >
                 <Link href={url}>
                   <div className="flex flex-col place-items-center relative p-1">
-                    <img src={image} alt={`${name} Thumbnail`} className="bg-google-dark h-28 lg:h-48 w-32 lg:w-48 rounded-md" />
-                    <p className="absolute bottom-0 text-neutral-300 font-semibold text-xs lg:text-sm text-center">{name}</p>
+                    <Image
+                      src={image}
+                      alt={`${name} Thumbnail`}
+                      className="bg-google-dark h-28 lg:h-48 w-32 lg:w-48 rounded-md"
+                    />
+                    <p className="absolute bottom-0 text-neutral-300 font-semibold text-xs lg:text-sm text-center">
+                      {name}
+                    </p>
                   </div>
                 </Link>
               </motion.div>
-            );
+            )
           })}
         </ul>
 
@@ -163,5 +173,5 @@ export default function ShortCuts({ }) {
         `}</style>
       </div>
     </section>
-  );
+  )
 }

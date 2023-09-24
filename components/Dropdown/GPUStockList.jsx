@@ -1,21 +1,22 @@
-import { Popover, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/solid";
-import Avatar from "@mui/material/Avatar";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import * as React from "react";
-import { Fragment } from "react";
-export default function GPUStockList({ data_nvidia, data_amd }) {
+import { Popover, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/solid'
+import Avatar from '@mui/material/Avatar'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
+import * as React from 'react'
+import { Fragment } from 'react'
+import Image from 'next/image'
 
+export default function GPUStockList({ data_nvidia, data_amd }) {
   function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
+    return classes.filter(Boolean).join(' ')
   }
 
-  const img = "/images/svg/chip.svg";
-  const title = "Consultar stock";
+  const img = '/images/svg/chip.svg'
+  const title = 'Consultar stock'
 
   return (
     <div className="pl-1 text-white sm:h-10 items-center py-2">
@@ -24,14 +25,24 @@ export default function GPUStockList({ data_nvidia, data_amd }) {
           <>
             <Popover.Button
               className={classNames(
-                open ? "text-blue-500" : "",
-                "group  rounded-md inline-flex items-center text-base font-medium hover:font-bold hover:underline focus:outline-none hover:text-blue-500"
+                open ? 'text-blue-500' : '',
+                'group  rounded-md inline-flex items-center text-base font-medium hover:font-bold hover:underline focus:outline-none hover:text-blue-500'
               )}
             >
-              <img alt="" src={img} className="h-6 w-6 mr-2 invert" />
+              <Image
+                alt=""
+                src={img}
+                width={40}
+                height={40}
+                style={{ width: 'auto', height: 'auto' }}
+                className="w-6 h-6 mr-2 invert"
+              />
               <span className="text-sm sm:text-normal">{title}</span>
               <ChevronDownIcon
-                className={classNames(open ? "text-blue-500" : "", "ml-1 h-5 w-5")}
+                className={classNames(
+                  open ? 'text-blue-500' : '',
+                  'ml-1 h-5 w-5'
+                )}
                 aria-hidden="true"
               />
             </Popover.Button>
@@ -51,28 +62,34 @@ export default function GPUStockList({ data_nvidia, data_amd }) {
                   <List
                     dense
                     sx={{
-                      width: "100%",
+                      width: '100%',
                       maxWidth: 360,
-                      "& .MuiListItemButton-root:hover": {
-                        bgcolor: "white",
-                        "&, & .MuiListItemIcon-root": {
-                          color: "black",
-                        },
-                      },
+                      '& .MuiListItemButton-root:hover': {
+                        bgcolor: 'white',
+                        '&, & .MuiListItemIcon-root': {
+                          color: 'black'
+                        }
+                      }
                     }}
                   >
-                    {data_nvidia.map((value) => {
-                      const labelId = `list-item-nvidia-label-${value.name}`;
+                    {data_nvidia.map(value => {
+                      const labelId = `list-item-nvidia-label-${value.name}`
                       return (
                         <ListItem disablePadding key={labelId}>
                           <ListItemButton href={value.href}>
                             <ListItemAvatar>
-                              <Avatar alt={`Avatar n°${value + 1}`} src={value.img} />
+                              <Avatar
+                                alt={`Avatar n°${value + 1}`}
+                                src={value.img}
+                              />
                             </ListItemAvatar>
-                            <ListItemText primary={value.name} className="hover:text-sky-400 hover:underline" />
+                            <ListItemText
+                              primary={value.name}
+                              className="hover:text-sky-400 hover:underline"
+                            />
                           </ListItemButton>
                         </ListItem>
-                      );
+                      )
                     })}
                   </List>
                 </div>
@@ -81,28 +98,34 @@ export default function GPUStockList({ data_nvidia, data_amd }) {
                   <List
                     dense
                     sx={{
-                      width: "100%",
+                      width: '100%',
                       maxWidth: 360,
-                      "& .MuiListItemButton-root:hover": {
-                        bgcolor: "white",
-                        "&, & .MuiListItemIcon-root": {
-                          color: "black",
-                        },
-                      },
+                      '& .MuiListItemButton-root:hover': {
+                        bgcolor: 'white',
+                        '&, & .MuiListItemIcon-root': {
+                          color: 'black'
+                        }
+                      }
                     }}
                   >
-                    {data_amd.map((value) => {
-                      const labelId = `list-item-amd-label-${value.name}`;
+                    {data_amd.map(value => {
+                      const labelId = `list-item-amd-label-${value.name}`
                       return (
                         <ListItem disablePadding key={labelId}>
                           <ListItemButton href={value.href}>
                             <ListItemAvatar>
-                              <Avatar alt={`Avatar n°${value + 1}`} src={value.img} />
+                              <Avatar
+                                alt={`Avatar n°${value + 1}`}
+                                src={value.img}
+                              />
                             </ListItemAvatar>
-                            <ListItemText primary={value.name} className="hover:text-sky-400 hover:underline" />
+                            <ListItemText
+                              primary={value.name}
+                              className="hover:text-sky-400 hover:underline"
+                            />
                           </ListItemButton>
                         </ListItem>
-                      );
+                      )
                     })}
                   </List>
                 </div>
@@ -112,5 +135,5 @@ export default function GPUStockList({ data_nvidia, data_amd }) {
         )}
       </Popover>
     </div>
-  );
+  )
 }

@@ -18,6 +18,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import Image from 'next/image'
 
 function descendingComparator(a, b, orderBy) {
   if (
@@ -428,12 +429,17 @@ export default function EnhancedTable({
                           padding="normal"
                         >
                           <div className="flex">
-                            <img
+                            <Image
                               aria-owns={
                                 open ? 'mouse-over-popover' : undefined
                               }
                               src={imageUrl}
-                              className="h-10 w-10 rounded-md"
+                              width={300}
+                              height={300}
+                              quality={100}
+                              alt={row['uuid']}
+                              style={{ width: 'auto', height: 'auto' }}
+                              className="h-8 w-8 rounded-md"
                               aria-haspopup="true"
                               onMouseEnter={handlePopoverOpen}
                               onMouseLeave={handlePopoverClose}
@@ -461,7 +467,12 @@ export default function EnhancedTable({
                               disableRestoreFocus
                               elevation={0}
                             >
-                              <img
+                              <Image
+                                width={300}
+                                height={300}
+                                quality={100}
+                                alt={row['uuid']}
+                                style={{ width: 'auto', height: 'auto' }}
                                 src={displayIMG}
                                 onError={onImageNotLoadedError}
                                 className="max-h-44	max-w-xs rounded-xl"
@@ -472,6 +483,7 @@ export default function EnhancedTable({
                               <Link
                                 href={url}
                                 target="_blank"
+                                rel="noreferrer"
                                 className="ml-5 hover:text-blue-300 hover:underline hover:decoration-blue-300 table-text-xs"
                               >
                                 {row.name}

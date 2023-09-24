@@ -7,6 +7,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import { Fragment, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function GPUStock({ title, generations }) {
   const defaultValues = {
@@ -47,7 +49,14 @@ export default function GPUStock({ title, generations }) {
                 'group  rounded-md inline-flex items-center focus:outline-none text-url'
               )}
             >
-              <img alt="" src={img} className="h-6 w-6 mr-2 invert" />
+              <Image
+                alt=""
+                src={img}
+                width={40}
+                height={40}
+                style={{ width: 'auto', height: 'auto' }}
+                className="w-6 h-6 mr-2 invert"
+              />
               <span className="hidden lg:block text-sm font-medium">
                 {title}
               </span>
@@ -85,7 +94,7 @@ export default function GPUStock({ title, generations }) {
                           className="hover:bg-zinc-600 rounded-xl"
                         >
                           <Popover className="relative">
-                            <Popover.Button className="p-2 flex place-items-center">
+                            <Popover.Button className="px-2 py-1 flex place-items-center">
                               <ListItemAvatar>
                                 <Avatar
                                   alt={`Avatar n°${value + 1}`}
@@ -137,8 +146,9 @@ export default function GPUStock({ title, generations }) {
                                           key={labelId}
                                           className="hover:bg-zinc-600 rounded-xl"
                                         >
-                                          <ListItemButton
+                                          <Link
                                             href={second_value.href}
+                                            className="flex flex-row px-2 py-1 items-center"
                                           >
                                             <ListItemAvatar>
                                               <Avatar
@@ -149,7 +159,7 @@ export default function GPUStock({ title, generations }) {
                                               />
                                             </ListItemAvatar>
                                             <ListItemText primary={model} />
-                                          </ListItemButton>
+                                          </Link>
                                         </ListItem>
                                       )
                                     })}

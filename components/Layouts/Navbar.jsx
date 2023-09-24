@@ -5,6 +5,7 @@ import Oportunities from './header/Oportunities'
 import PCBuilder from './header/PCBuilder'
 import Link from 'next/link'
 import AuthSection from './header/AuthSection'
+import Image from 'next/image'
 
 function Navbar({ path, userData }) {
   const logoIMG = `/images/logos/StockFinderLogo.svg`
@@ -16,8 +17,10 @@ function Navbar({ path, userData }) {
           <div>
             <Link href="/">
               <span className="inline-flex">
-                <img
-                  className="h-8 w-auto hover:-rotate-12"
+                <Image
+                  className="hover:-rotate-12"
+                  height={40}
+                  width={40}
                   src={logoIMG}
                   alt=""
                 />
@@ -38,12 +41,14 @@ function Navbar({ path, userData }) {
             data={solutions}
             img="/images/svg/chip.svg"
           />
-          <div className="p-2 text-white h-10 items-center z-20">
+          <div className="static z-20 p-2 text-white h-10 items-center">
             <Link href="/categorias/monitores" className="flex items-center">
-              <img
+              <Image
                 alt=""
+                width={24}
+                height={24}
                 src="/images/svg/monitor.svg"
-                className="h-6 w-6 mr-2 invert"
+                className="mr-2 invert"
               />
               <span className="hidden lg:block text-sm font-medium text-url">
                 Monitores
