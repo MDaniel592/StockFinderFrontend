@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import VerticalFloatingFilters from '../Sidebar/VerticalFloatingFilters'
 import PaginatedItems from '../Tables/Pagination'
 import TableHeader from '../Tables/TableHeader'
 import AlertManagement from './AlertManagement'
 import { getFilteredData } from './FilterFunction'
 import ProductList from './ProductList'
+import { slideUp } from './animation.js'
+import { motion } from 'framer-motion'
+import { ServiceContext } from '../../pages/_app'
 
 export default function StockPage({ data_recv, category }) {
   const no_data = (
     <section>
       <p className="text-center font-semibold text-base lg:text-xl font-medium text-red-500 lg:my-38">
-        {' '}
         En estos momentos NO hay {category} disponible
       </p>
     </section>
@@ -222,53 +224,64 @@ export default function StockPage({ data_recv, category }) {
     tableLen,
     setTableLen
   )
+
+  const { seTitle } = useContext(ServiceContext)
+  useEffect(() => {
+    seTitle(`${category} | StockFinder.tech`)
+  }, [])
+
   return (
-    <section className="w-fit mx-auto py-2">
-      <h3 className="pt-4 text-xl lg:text-3xl font-semibold text-center">
-        Modelos de {category} en stock
-      </h3>
-      <div className="section-title-separator bg-blue-500 w-16 sm:w-48 rounded-full mt-1 h-2 mx-auto"></div>
+    <motion.div variants={slideUp} initial="initial" animate={'open'}>
+      <section className="w-fit mx-auto py-2">
+        <h3 className="pt-4 text-xl lg:text-3xl font-semibold text-center">
+          Modelos de {category} en stock
+        </h3>
+        <div className="section-title-separator bg-blue-500 w-16 sm:w-48 rounded-full mt-1 h-2 mx-auto"></div>
 
-      <p className="mx-auto max-w-2xl text-center text-xs font-sans antialiased my-4">
-        Las alertas creadas en este apartado únicamente le avisarán manteniendo
-        esta pestaña abierta (saltará una notificación y un sonido de alerta).
-        Puede recibir las alertas por telegram registrandose cómo usuario, y
-        creándolas desde su perfil.
-      </p>
-      <div name="stockForm" className="flex justify-center">
-        <AlertManagement products={data_recv['products']} category={category} />
-      </div>
+        <p className="mx-auto max-w-2xl text-center text-xs font-sans antialiased my-4">
+          Las alertas creadas en este apartado únicamente le avisarán
+          manteniendo esta pestaña abierta (saltará una notificación y un sonido
+          de alerta). Puede recibir las alertas por telegram registrandose cómo
+          usuario, y creándolas desde su perfil.
+        </p>
+        <div name="stockForm" className="flex justify-center">
+          <AlertManagement
+            products={data_recv['products']}
+            category={category}
+          />
+        </div>
 
-      <div name="filters" className="flex justify-center">
-        <VerticalFloatingFilters
-          name="Filtros"
-          data_list={data_list}
-          data_slider={data_slider}
-        />
-      </div>
+        <div name="filters" className="flex justify-center">
+          <VerticalFloatingFilters
+            name="Filtros"
+            data_list={data_list}
+            data_slider={data_slider}
+          />
+        </div>
 
-      <div className="px-4 sm:px-6 text-white">
-        <TableHeader
-          data_values={TableHeaderDataValues}
-          selectedValues={TableHeaderSelectedValues}
-          tableLen={tableLen}
-          handleSearch={handleSearch}
-          removeFilters={removeFilters}
-        />
-      </div>
+        <div className="px-4 sm:px-6 text-white">
+          <TableHeader
+            data_values={TableHeaderDataValues}
+            selectedValues={TableHeaderSelectedValues}
+            tableLen={tableLen}
+            handleSearch={handleSearch}
+            removeFilters={removeFilters}
+          />
+        </div>
 
-      <div className="flex-wrap bg-zinc-800 rounded-lg w-fit z-0 text-neutral-300 my-2 p-2 mx-auto">
-        <ProductList
-          data={filteredData}
-          maxTableList={maxTableList}
-          failOverImage="gpu"
-        />
-        <PaginatedItems
-          setMaxTableList={setMaxTableList}
-          maxTableList={maxTableList}
-          tableLen={tableLen}
-        />
-      </div>
-    </section>
+        <div className="flex-wrap bg-zinc-800 rounded-lg w-fit z-0 text-neutral-300 my-2 p-2 mx-auto">
+          <ProductList
+            data={filteredData}
+            maxTableList={maxTableList}
+            failOverImage="gpu"
+          />
+          <PaginatedItems
+            setMaxTableList={setMaxTableList}
+            maxTableList={maxTableList}
+            tableLen={tableLen}
+          />
+        </div>
+      </section>
+    </motion.div>
   )
 }

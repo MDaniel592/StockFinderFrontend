@@ -25,8 +25,7 @@ export default function TableHeader({
     for (const [key, value] of Object.entries(item)) {
       return (
         <li key={key} className="ml-4 mt-1">
-          {' '}
-          {key}: {value}{' '}
+          {key}: {value}
         </li>
       )
     }

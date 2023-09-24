@@ -6,9 +6,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import PasswordResetForm from '../components/PasswordResetForm/PasswordResetForm'
-import AuthService from '../services/AuthService'
 
-export default function main({ userData }) {
+export default function main() {
   const theme = createTheme()
 
   return (
@@ -41,17 +40,4 @@ export default function main({ userData }) {
       </section>
     </React.Fragment>
   )
-}
-
-// Server side rendering
-export async function getServerSideProps(context) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-  return {
-    props: {
-      userData
-    }
-  }
 }

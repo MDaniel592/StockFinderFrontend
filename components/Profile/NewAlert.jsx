@@ -26,6 +26,7 @@ export default function NewAlert({ userData, telegram, gpuModels }) {
           <Tab.List className="flex space-x-1 rounded-xl p-1">
             {Object.keys(categoryTabs).map(index => (
               <Tab
+                key={Math.random()}
                 className={({ selected }) =>
                   classNames(
                     'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-white',
@@ -43,7 +44,10 @@ export default function NewAlert({ userData, telegram, gpuModels }) {
           <ProfileLayout marginTop={0} maxWidth={''}>
             <Tab.Panels>
               {Object.keys(categoryTabs).map(index => (
-                <Tab.Panel className={classNames('rounded-xl p-3')}>
+                <Tab.Panel
+                  className={classNames('rounded-xl p-3')}
+                  key={Math.random()}
+                >
                   <NewAlertForm
                     telegram={telegram}
                     alertType={categoryTabs[index]}

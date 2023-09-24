@@ -2,7 +2,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ProfileLayout from '../../components/Layouts/ProfileLayout'
 import UserDelete from '../../components/Profile/UserDelete/UserDelete'
 import AuthService from '../../services/AuthService'
@@ -10,8 +10,7 @@ import { ServiceContext } from '../_app'
 
 export default function ProfileChangePassword({ userData, data }) {
   const router = useRouter()
-  const { userService, authService } = useContext(ServiceContext)
-  const [errorMessage, setErrorMessage] = useState(undefined)
+  const { authService, seTitle } = useContext(ServiceContext)
 
   const validateUserData = async () => {
     if (!userData) {
@@ -21,6 +20,7 @@ export default function ProfileChangePassword({ userData, data }) {
   }
 
   useEffect(() => {
+    seTitle('Panel de Usuario | StockFinder.tech')
     validateUserData()
   }, [])
 
@@ -49,6 +49,6 @@ export async function getServerSideProps(context) {
   let userData = null
   if (result.error) return { props: {} }
   userData = result.userData
-  const title = 'Perfil'
+  const title = 'Panel de Usuario'
   return { props: { userData, title } }
 }

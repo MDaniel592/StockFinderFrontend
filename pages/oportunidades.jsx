@@ -1,23 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import AuthService from '../services/AuthService'
+import React, { useEffect, useContext } from 'react'
+import { ServiceContext } from './_app'
 
 import ProductsRows from 'components/Oportunities/ProductsRows'
 
 export default function OportunitiesISR({ data }) {
-  const [userData, setUserData] = useState({})
-  const authService = new AuthService()
-  useEffect(() => {
-    async function fetchUserData() {
-      const result = await authService.clientValidateCookie()
-      if (!result.error) setUserData(result.userData)
-    }
-    fetchUserData()
-  }, [])
-
   const twentyPercent = data?.[20] ? data[20] : []
   const thirtyPercent = data?.[30] ? data[30] : []
   const fortyPercent = data?.[40] ? data[40] : []
   const fiftyPercent = data?.[50] ? data[50] : []
+
+  const { seTitle } = useContext(ServiceContext)
+  useEffect(() => {
+    seTitle(`Oportunidades | StockFinder.tech`)
+  }, [])
 
   return (
     <React.Fragment>

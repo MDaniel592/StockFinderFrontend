@@ -113,6 +113,7 @@ export default function Price({}) {
                 <Link
                   href="/canales-telegram"
                   target="_blank"
+                  rel="noreferrer"
                   className="ml-3 leading-6 text-gray-200 hover:text-blue-500 hover:underline"
                 >
                   Acceso a todos los canales
@@ -125,6 +126,7 @@ export default function Price({}) {
                 <Link
                   href="/categorias"
                   target="_blank"
+                  rel="noreferrer"
                   className="ml-3 leading-6 text-gray-200 hover:text-blue-500 hover:underline"
                 >
                   Stock en tiempo real

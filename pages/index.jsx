@@ -1,11 +1,19 @@
-import AuthService from '../services/AuthService'
 import Landing from '../components/Index/Landing'
 import SlidingImages from '../components/Index/SlidingImages'
 import Builder from '../components/Index/Builder'
 import Deals from '../components/Index/Deals'
 import Price from '../components/Index/Price'
 
+import React, { useContext, useEffect } from 'react'
+import { ServiceContext } from './_app'
+
 export default function Home({ deals }) {
+  const { seTitle } = useContext(ServiceContext)
+
+  useEffect(() => {
+    seTitle('StockFinder.tech')
+  }, [])
+
   return (
     <>
       <Landing />
@@ -18,14 +26,9 @@ export default function Home({ deals }) {
 }
 
 // Server side rendering
-export async function getServerSideProps(context) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-
+export async function getServerSideProps() {
   const res = await fetch(process.env.BACKEND_API_URL + '/deals')
   const deals = await res.json()
 
-  return { props: { deals, userData } }
+  return { props: { deals } }
 }

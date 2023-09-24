@@ -1,14 +1,11 @@
-import React from 'react'
 import CookieConsent from './CookieConsent'
 // import Tabbar from "../Tabbar";
-import Footer from './Footer'
+import Footer from './Footer/index'
 import Head from 'next/head'
 import NavBar from './Navbar'
+import React from 'react'
 
-export default function Layout({ userData, titlePage, children, router }) {
-  const websiteURL = 'StockFinder.tech'
-  const title = titlePage + ' | ' + websiteURL ? titlePage : websiteURL
-
+export default function Layout({ userData, title, children, router }) {
   return (
     <React.Fragment>
       <Head>

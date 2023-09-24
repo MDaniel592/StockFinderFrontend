@@ -9,7 +9,7 @@ import AuthService from '../../services/AuthService'
 import { ServiceContext } from '../_app'
 
 export default function ProfileChangePassword({ userData, data }) {
-  const { authService } = useContext(ServiceContext)
+  const { authService, seTitle } = useContext(ServiceContext)
   const router = useRouter()
 
   const validateUserData = async () => {
@@ -20,6 +20,7 @@ export default function ProfileChangePassword({ userData, data }) {
   }
 
   useEffect(() => {
+    seTitle('Panel de Usuario | StockFinder.tech')
     validateUserData()
   }, [])
 

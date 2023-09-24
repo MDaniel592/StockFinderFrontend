@@ -5,18 +5,18 @@ import UserDataProfile from '../components/Profile/UserData/UserData'
 import WarningMessage from '../components/Profile/UserData/WarningMessage'
 import UserManagement from '../components/Profile/UserManagement'
 import UserAlertModel from '../models/UserAlertModel'
-import AuthService from '../services/AuthService'
 import CookieService from '../services/CookieService'
 import { ServiceContext } from './_app'
 
-export default function MyProfile({ userData }) {
-  const { authService, userService } = useContext(ServiceContext)
+export default function index() {
+  const { authService, userService, userData, seTitle } =
+    useContext(ServiceContext)
   const router = useRouter()
 
   const [alertsList, setAlertsList] = useState([])
   const validateUserData = async () => {
     try {
-      if (userData === null) {
+      if (!userData) {
         authService.logout()
         router.push('/login')
         return
@@ -31,8 +31,7 @@ export default function MyProfile({ userData }) {
   const getUserWatches = async () => {
     const token = CookieService.getCookie('StockFinder')
     const response = await userService.getUserWatches(token)
-    if (!response.ok) {
-    }
+    if (!response.ok) return
     const data = await response.json()
     setAlertsList(
       data.products ? data.products.map(item => new UserAlertModel(item)) : []
@@ -40,6 +39,7 @@ export default function MyProfile({ userData }) {
   }
 
   useEffect(() => {
+    seTitle('Panel de Usuario | StockFinder.tech')
     validateUserData()
     getUserWatches()
   }, [])
@@ -61,7 +61,7 @@ export default function MyProfile({ userData }) {
             <div className="my-4 mx-8">
               <button
                 className="btn-blue-white"
-                onClick={e => router.push('/profile/new-alert')}
+                onClick={router.push('/profile/new-alert')}
               >
                 Nueva alerta
               </button>
@@ -86,7 +86,7 @@ export default function MyProfile({ userData }) {
             <div className="my-2 w-36 mx-auto lg:hidden">
               <button
                 className="btn-blue-white"
-                onClick={e => router.push('/profile/new-alert')}
+                onClick={router.push('/profile/new-alert')}
               >
                 Nueva alerta
               </button>
@@ -100,13 +100,4 @@ export default function MyProfile({ userData }) {
       </div>
     </div>
   )
-}
-
-// Server side rendering
-export async function getServerSideProps(context) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-  return { props: { userData } }
 }

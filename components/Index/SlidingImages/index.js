@@ -5,21 +5,25 @@ import { slideUp } from './animation.js'
 
 const slider1 = [
   {
+    index: 1,
     name: 'Procesadores',
     src: 'components/AMD-Ryzen-7000.png',
     href: '/categorias/procesadores'
   },
   {
+    index: 2,
     name: 'Tarjetas Gráficas',
     src: 'components/asus.png',
     href: '/categorias/tarjetas-graficas'
   },
   {
+    index: 3,
     name: 'Placas Base',
     src: 'categories/motherboard.webp',
     href: '/categorias/placas-base'
   },
   {
+    index: 4,
     name: 'Fuentes alimentación',
     src: 'categories/PSU.webp',
     href: '/categorias/fuentes-alimentacion'
@@ -28,21 +32,25 @@ const slider1 = [
 
 const slider2 = [
   {
+    index: 5,
     name: 'Memorias RAM',
     src: 'categories/RAM.webp',
     href: '/categorias/memoria-ram'
   },
   {
+    index: 6,
     name: 'Almacenamiento',
     src: 'categories/SSD.webp',
     href: '/categorias/almacenamiento'
   },
   {
+    index: 7,
     name: 'Torres',
     src: 'categories/torre.webp',
     href: '/categorias/torres'
   },
   {
+    index: 8,
     name: 'Disipadores CPU',
     src: 'categories/disipador.webp',
     href: '/categorias/disipadores-cpu'
@@ -82,7 +90,11 @@ export default function index() {
       <motion.div className="flex flex-wrap sm:flex-row justify-center gap-2">
         {slider1.map((project, index) => {
           return (
-            <div
+            <motion.div
+              variants={slideUp}
+              initial="initial"
+              animate={isInView ? 'open' : 'closed'}
+              custom={project.index}
               key={Math.random()}
               className={`relative w-1/3 sm:w-1/6 h-auto text-url hover:bg-neutral-700 hover:bg-opacity-90 rounded-lg p-0 sm:p-2`}
             >
@@ -90,25 +102,25 @@ export default function index() {
                 <motion.img
                   className="rounded-lg"
                   fill="true"
-                  variants={slideUp}
-                  initial="initial"
-                  animate={isInView ? 'open' : 'closed'}
                   alt={'image'}
                   src={`/images/${project.src}`}
-                  custom={index}
                 />
                 <p className="absolute truncate text-xxs sm:text-lg inset-x-0 bottom-0 text-center font-bold text-white-500 text-url py-0 sm:py-2">
                   {project.name}
                 </p>
               </Link>
-            </div>
+            </motion.div>
           )
         })}
       </motion.div>
       <motion.div className="flex flex-wrap sm:flex-row justify-center gap-2">
         {slider2.map((project, index) => {
           return (
-            <div
+            <motion.div
+              variants={slideUp}
+              initial="initial"
+              animate={isInView ? 'open' : 'closed'}
+              custom={project.index}
               key={Math.random()}
               className={`relative w-1/3 sm:w-1/6 h-auto text-url hover:bg-neutral-700 hover:bg-opacity-90 rounded-lg p-0 sm:p-2`}
             >
@@ -116,18 +128,14 @@ export default function index() {
                 <motion.img
                   className="rounded-lg"
                   fill="true"
-                  variants={slideUp}
-                  initial="initial"
-                  animate={isInView ? 'open' : 'closed'}
                   alt={'image'}
                   src={`/images/${project.src}`}
-                  custom={index}
                 />
                 <p className="absolute truncate text-xxs sm:text-lg inset-x-0 bottom-0 text-center font-bold text-white-500 text-url py-0 sm:py-2">
                   {project.name}
                 </p>
               </Link>
-            </div>
+            </motion.div>
           )
         })}
       </motion.div>

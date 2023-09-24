@@ -10,12 +10,11 @@ import RAMSpecifications from 'models/Specifications/RAMSpecifications'
 
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import CategoryService from 'services/CategoryService'
 import ErrorMessageAlert from '../components/Alerts/ErrorMessageAlert'
-import AuthService from '../services/AuthService'
 import BuildService from '../services/BuildService'
-import { BuilderContext } from './_app'
+import { BuilderContext, ServiceContext } from './_app'
 
 const DEFAULT_SOCKETS: { socketName: string; socketProp: string }[] = [
   { socketName: 'AMD Socket AM4', socketProp: 'Socket AM4' },
@@ -69,12 +68,13 @@ interface MutableObject extends Object {
 interface MutableCategory {
   [index: string]: { name: string; categoryName: string }
 }
-export default function Builder(props: { userData: any; productsList: any }) {
+export default function Builder(props: { productsList: any }) {
   const productLists = React.useMemo(
     () => props.productsList,
     [props.productsList]
   )
-  const userData = React.useMemo(() => props.userData, props.userData)
+
+  const { seTitle } = useContext(ServiceContext)
 
   const [selectedSocket, setSelectedSocket] = useState<string>('')
   const [build, setBuild] = useState<MutableObject>({})
@@ -224,6 +224,7 @@ export default function Builder(props: { userData: any; productsList: any }) {
   }
 
   useEffect(() => {
+    seTitle('Configurador de PC | StockFinder.tech')
     setSelectedSocket(localStorage.getItem(SELECTED_SOCKET_KEY) || '')
     setBuild(JSON.parse(localStorage.getItem(BUILD_IN_PROGRES_KEY) || '{}'))
   }, [])
@@ -480,7 +481,7 @@ export default function Builder(props: { userData: any; productsList: any }) {
         <article className="step hide-step">
           <div className="build-price flex flex-col md:flex-row w-full lg:w-3/4 xl:w-3/5 2xl:w-1/2 justify-between align-baseline">
             <p className="text-lg">
-              Precio total:{' '}
+              Precio total:
               <span className="font-bold text-blue-500">
                 {Object.keys(build)
                   .map(key => build[key].price)
@@ -526,13 +527,7 @@ export default function Builder(props: { userData: any; productsList: any }) {
 }
 
 // Server side rendering
-export async function getServerSideProps(context: GetServerSideProps) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-  //
-
+export async function getServerSideProps() {
   const productPromises: Promise<any>[] = []
   const categoryService = new CategoryService()
   Object.keys(CATEGORIES).forEach(category => {
@@ -553,6 +548,5 @@ export async function getServerSideProps(context: GetServerSideProps) {
   } catch (error) {
     return {}
   }
-  const title = 'Configurador de PCs'
-  return { props: { userData, productsList, title } }
+  return { props: { productsList } }
 }

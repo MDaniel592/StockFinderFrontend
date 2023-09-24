@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import Sidebar from '../Sidebar/Sidebar.jsx'
 import VerticalFloatingFilters from '../Sidebar/VerticalFloatingFilters.jsx'
 import List from '../Tables/List'
 import Table from '../Tables/Table'
 import TableHeader from '../Tables/TableHeader'
+import { slideUp } from './animation.js'
+import { motion } from 'framer-motion'
+import { ServiceContext } from '../../pages/_app'
 
 export default function CategoryPage({
   data_list,
@@ -63,8 +66,13 @@ export default function CategoryPage({
       break
   }
 
+  const { seTitle } = useContext(ServiceContext)
+  useEffect(() => {
+    seTitle(`${categoryTitle} | StockFinder.tech`)
+  }, [])
+
   return (
-    <>
+    <motion.div variants={slideUp} initial="initial" animate={'open'}>
       <h3 className="text-3xl font-semibold text-center">{categoryTitle}</h3>
       <div className="section-title-separator bg-blue-500 w-16 sm:w-32 rounded-full mt-1 mb-4 h-2 mx-auto"></div>
 
@@ -126,6 +134,6 @@ export default function CategoryPage({
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }

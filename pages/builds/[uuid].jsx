@@ -1,26 +1,25 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import BuildPage from '../../components/Builder/BuildPage'
 import Page404 from '../../components/Page404'
-import AuthService from '../../services/AuthService'
+import { ServiceContext } from '../_app'
 
 // Easy, we receive the UUID as link parameter** and we used it to retrieve the product's data
-export default function Home({ data, userData, build_uuid }) {
-  if (Object.keys(data).length === 0) return <Page404 />
+export default function Home({ ...pageProps }) {
+  if (Object.keys(pageProps.data).length === 0) return <Page404 />
+
+  const { seTitle } = useContext(ServiceContext)
+  useEffect(() => {
+    seTitle('Configuración | StockFinder.tech')
+  }, [])
 
   return (
     <React.Fragment>
-      <BuildPage data={data} build_uuid={build_uuid} />
+      <BuildPage data={pageProps.data} build_uuid={pageProps.build_uuid} />
     </React.Fragment>
   )
 }
 
-// Server side rendering
 export async function getServerSideProps(context) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-
   const build_uuid = context['params']['uuid']
 
   let data = {}
@@ -31,7 +30,5 @@ export async function getServerSideProps(context) {
     data = await res.json()
   }
 
-  const title = 'Configuración'
-
-  return { props: { data, title, userData, build_uuid } }
+  return { props: { data, title, build_uuid } }
 }

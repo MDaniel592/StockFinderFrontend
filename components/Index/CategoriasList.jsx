@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { generations, solutions } from '/components/Layouts/header/GPUdata'
 
 export default function CategoriasList({}) {
-  let link_class =
+  const linkClass =
     'hover:underline text-left text-blue-500 text-xxs lg:text-base'
 
   return (
@@ -16,11 +16,14 @@ export default function CategoriasList({}) {
           <span className="font-semibold text-base lg:text-lg mb-2 border-b border-gray-500">
             CATEGORIAS
           </span>
-          <ul className="pl-10 grid justify-start list-disc">
+          <ul
+            className="pl-10 grid justify-start list-disc"
+            key={Math.random()}
+          >
             {solutions.map(value => {
               return (
-                <li>
-                  <Link href={value.href} className={link_class}>
+                <li key={Math.random()}>
+                  <Link href={value.href} className={linkClass}>
                     {value.name}
                   </Link>
                 </li>
@@ -34,15 +37,15 @@ export default function CategoriasList({}) {
           </span>
           {generations.map(value => {
             return (
-              <div className="ml-4">
+              <div className="ml-4" key={Math.random()}>
                 <span className="font-semibold text-xs lg:text-base mb-2 border-b border-gray-500">
                   {value.name}
                 </span>
                 <ul className="pl-10 grid justify-start list-disc">
                   {value.values.map(second_value => {
                     return (
-                      <li>
-                        <Link href={second_value.href} className={link_class}>
+                      <li key={Math.random()}>
+                        <Link href={second_value.href} className={linkClass}>
                           {second_value.name}
                         </Link>
                       </li>

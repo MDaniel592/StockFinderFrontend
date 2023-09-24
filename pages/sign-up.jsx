@@ -44,31 +44,29 @@ export default function main({ userData }) {
 
   return (
     <React.Fragment>
-      <Layout userData={userData} title_text={false}>
-        <ProfileLayout>
-          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <div className="my-6 mx-12">
-            <Typography component="h1" variant="h6">
-              Debes cerrar sesión para crear una nueva cuenta
-            </Typography>
+      <ProfileLayout>
+        <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <div className="my-6 mx-12">
+          <Typography component="h1" variant="h6">
+            Debes cerrar sesión para crear una nueva cuenta
+          </Typography>
 
-            <button
-              className="mt-4 w-full block px-8 py-1 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded active:text-blue-500 hover:bg-white hover:text-blue-600 focus:outline-none focus:ring"
-              onClick={onLogoutButtonPressed}
-            >
-              Cerrar sesión
-            </button>
-            <button
-              className="mt-4 w-full block px-8 py-1 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded active:text-blue-500 hover:bg-white hover:text-blue-600 focus:outline-none focus:ring"
-              onClick={onProfileButtonPressed}
-            >
-              Ir al perfil
-            </button>
-          </div>
-        </ProfileLayout>
-      </Layout>
+          <button
+            className="mt-4 w-full block px-8 py-1 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded active:text-blue-500 hover:bg-white hover:text-blue-600 focus:outline-none focus:ring"
+            onClick={onLogoutButtonPressed}
+          >
+            Cerrar sesión
+          </button>
+          <button
+            className="mt-4 w-full block px-8 py-1 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded active:text-blue-500 hover:bg-white hover:text-blue-600 focus:outline-none focus:ring"
+            onClick={onProfileButtonPressed}
+          >
+            Ir al perfil
+          </button>
+        </div>
+      </ProfileLayout>
     </React.Fragment>
   )
 }

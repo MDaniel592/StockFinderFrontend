@@ -5,11 +5,10 @@ import { useRouter } from 'next/router'
 import React, { useContext, useEffect } from 'react'
 import ProfileLayout from '../components/Layouts/ProfileLayout'
 import LoginForm from '../components/LoginForm/LoginForm'
-import AuthService from '../services/AuthService'
 import { ServiceContext } from './_app'
 
-export default function main({ userData }) {
-  const { authService } = useContext(ServiceContext)
+export default function index() {
+  const { authService, userData, seTitle } = useContext(ServiceContext)
 
   const router = useRouter()
   const onLoginSuccess = () => {
@@ -18,20 +17,16 @@ export default function main({ userData }) {
 
   const validateUserData = async () => {
     try {
-      if (userData === null) {
-        authService.logout()
-        router.push('/login')
-        return
-      }
+      if (!userData) return
       router.push('/profile')
     } catch (err) {
       authService.logout()
       router.push('/login')
-      return
     }
   }
 
   useEffect(() => {
+    seTitle('Inicio de sesión | StockFinder.tech')
     validateUserData()
   }, [])
 
@@ -51,15 +46,4 @@ export default function main({ userData }) {
       </ProfileLayout>
     </React.Fragment>
   )
-}
-
-// Server side rendering
-export async function getServerSideProps(context) {
-  const title = 'Inicio de sesión'
-
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
-  return { props: { userData, title } }
 }

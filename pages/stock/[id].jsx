@@ -1,32 +1,32 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import Page404 from '../../components/Page404'
 import StockPage from '../../components/Stock/StockPage'
-import AuthService from '../../services/AuthService'
+import { ServiceContext } from '../_app'
 
-/*
- * nameserver/categorias/[id] -> There are allowed categories to avoid unnecessaries petitions to the DB
- * If there is a valid category, the corresponding webpage will be returned
- */
-export default function Home({ data, userData, category }) {
-  if (data === null || Object.keys(data).length === 0) return <Page404 />
+export default function Home({ ...pageProps }) {
+  if (pageProps.data === null || Object.keys(pageProps.data).length === 0)
+    return <Page404 />
+
+  const { seTitle } = useContext(ServiceContext)
+  useEffect(() => {
+    seTitle(`${pageProps.title} | StockFinder.tech`)
+  }, [])
 
   return (
     <React.Fragment>
-      <StockPage data_recv={data} category={category} key={Math.random()} />
+      <StockPage
+        data_recv={pageProps.data}
+        category={pageProps.title}
+        key={Math.random()}
+      />
     </React.Fragment>
   )
 }
 
 export async function getServerSideProps(context) {
-  let authService = new AuthService()
-  const result = await authService.validateCookie(context)
-  let userData = null
-  if (!result.error) userData = result.userData
+  const title = context['params']['id']
 
-  const category = context['params']['id']
-  const title = category
-
-  const res = await fetch(process.env.BACKEND_API_URL + '/stock/' + category)
+  const res = await fetch(process.env.BACKEND_API_URL + '/stock/' + title)
   const data = await res.json()
-  return { props: { data, userData, title } }
+  return { props: { data, title } }
 }

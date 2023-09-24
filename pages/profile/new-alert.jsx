@@ -7,7 +7,7 @@ import AuthService from '../../services/AuthService'
 import { ServiceContext } from '../_app'
 
 export default function New_Alert({ userData, data }) {
-  const { authService } = useContext(ServiceContext)
+  const { authService, seTitle } = useContext(ServiceContext)
   const router = useRouter()
 
   const validateUserData = async () => {
@@ -18,6 +18,7 @@ export default function New_Alert({ userData, data }) {
   }
 
   useEffect(() => {
+    seTitle('Panel de Usuario | StockFinder.tech')
     validateUserData()
   }, [])
 
