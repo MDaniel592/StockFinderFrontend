@@ -36,7 +36,6 @@ export default function AuthSection({ userData }) {
               onClick={onLogoutButtonPressed}
               className="inline-flex justify-center btn-ok"
             >
-              {/* Cerrar sesión (sesión iniciada como {userData.email}) */}
               Cerrar sesión
             </button>
           </div>
@@ -44,7 +43,7 @@ export default function AuthSection({ userData }) {
             <UserPanelAccessIcon
               userData={userData}
               onLogoutButtonPressed={onLogoutButtonPressed}
-              img="/images/user-icon.png"
+              img="/images/svg/user-icon.svg"
             ></UserPanelAccessIcon>
           </div>
         </React.Fragment>
@@ -67,8 +66,8 @@ export default function AuthSection({ userData }) {
           Registrarse
         </Link>
       </div>
-      <div className="z-20 flex justify-end md:hidden text-right align-middle">
-        <UserPanelAccessIcon img="/images/user-icon.png"></UserPanelAccessIcon>
+      <div className="z-50 flex justify-end md:hidden text-right align-middle">
+        <UserPanelAccessIcon img="/images/svg/user-icon.svg"></UserPanelAccessIcon>
       </div>
     </React.Fragment>
   )

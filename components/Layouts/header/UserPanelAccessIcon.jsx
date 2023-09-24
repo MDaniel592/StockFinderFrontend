@@ -32,12 +32,12 @@ export default function UserPanelAccessIcon({
           >
             Panel de usuario
           </Link>
-          <Link
+          <button
             onClick={onLogoutButtonPressed}
             className="mt-2 inline-flex justify-center px-2 py-2 rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-800"
           >
             Cerrar Sesión
-          </Link>
+          </button>
         </div>
       )
     }
@@ -64,7 +64,7 @@ export default function UserPanelAccessIcon({
   }
 
   const popoverclass =
-    'absolute z-10 transform -translate-x-3/4 bg-zinc-800 bg-opacity-90 rounded-lg'
+    'absolute z-50 transform -translate-x-3/4 bg-zinc-800 bg-opacity-90 rounded-lg'
 
   return (
     <Popover className="relative">
@@ -80,11 +80,9 @@ export default function UserPanelAccessIcon({
                       'group rounded-md text-base font-medium hover:font-bold hover:underline focus:outline-none '
                     )}
                   >
-                    <Image
+                    <img
                       alt=""
-                      width={40}
-                      height={40}
-                      style={{ width: 'auto', height: 'auto' }}
+                      loading="lazy"
                       src={img}
                       className="h-8 w-8 opacity-60 hover:opacity-100"
                     />
