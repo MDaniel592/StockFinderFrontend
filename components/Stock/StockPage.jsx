@@ -238,12 +238,15 @@ export default function StockPage({ data_recv, category }) {
         </h3>
         <div className="section-title-separator bg-blue-500 w-16 sm:w-48 rounded-full mt-1 h-2 mx-auto"></div>
 
-        <p className="mx-auto max-w-2xl text-center text-xs font-sans antialiased my-4">
-          Las alertas creadas en este apartado únicamente le avisarán
-          manteniendo esta pestaña abierta (saltará una notificación y un sonido
-          de alerta). Puede recibir las alertas por telegram registrandose cómo
-          usuario, y creándolas desde su perfil.
-        </p>
+        <div className="mx-auto max-w-2xl py-2 px-2">
+          <p className="text-justify text-xs font-sans antialiased rounded-lg bg-google-dark py-2 px-2 bg-opacity-95">
+            Las alertas creadas en este apartado únicamente le avisarán
+            manteniendo esta pestaña abierta (saltará una notificación y un
+            sonido de alerta). Puede recibir las alertas por telegram
+            registrandose cómo usuario, y creándolas desde su perfil.
+          </p>
+        </div>
+
         <div name="stockForm" className="flex justify-center">
           <AlertManagement
             products={data_recv['products']}
@@ -269,7 +272,7 @@ export default function StockPage({ data_recv, category }) {
           />
         </div>
 
-        <div className="flex-wrap bg-zinc-800 rounded-lg w-fit z-0 text-neutral-300 my-2 p-2 mx-auto">
+        <div className="flex-wrap bg-zinc-800 bg-opacity-80 rounded-lg w-fit z-0 text-neutral-300 my-2 p-2 mx-auto">
           <ProductList
             data={filteredData}
             maxTableList={maxTableList}
