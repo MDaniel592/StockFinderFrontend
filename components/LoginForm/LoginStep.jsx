@@ -17,7 +17,7 @@ export default function LoginStep({ handleChange, values, onLoginSuccess }) {
   }
   async function attemptLogin() {
     let loginResponse = await authService.login(values)
-    if (!loginResponse.errors) {
+    if (!loginResponse.error) {
       setUserData(loginResponse.userData)
       onLoginSuccess()
     } else setErrorMessage(loginResponse.error)
