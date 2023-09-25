@@ -7,13 +7,13 @@ const slider1 = [
   {
     index: 1,
     name: 'Procesadores',
-    src: 'components/AMD-Ryzen-7000.png',
+    src: 'components/AMD-Ryzen-7000.webp',
     href: '/categorias/procesadores'
   },
   {
     index: 2,
     name: 'Tarjetas Gráficas',
-    src: 'components/asus.png',
+    src: 'components/asus.webp',
     href: '/categorias/tarjetas-graficas'
   },
   {

@@ -6,13 +6,13 @@ export default function ShortCuts({}) {
     {
       id: 0,
       name: 'Procesadores',
-      image: 'images/components/AMD-Ryzen-7000.png',
+      image: 'images/components/AMD-Ryzen-7000.webp',
       url: '/categorias/procesadores'
     },
     {
       id: 1,
       name: 'Tarjetas Gráficas',
-      image: 'images/components/asus.png',
+      image: 'images/components/asus.webp',
       url: '/categorias/tarjetas-graficas'
     },
     {
