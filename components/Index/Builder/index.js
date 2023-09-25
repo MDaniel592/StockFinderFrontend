@@ -42,7 +42,7 @@ export default function Builder() {
         <div>
           <div
             style={divStyle}
-            className="relative mx-auto justify-center max-w-xs sm:max-w-4xl max-h-[30vh] sm:max-h-[60vh]"
+            className="relative mx-auto justify-center max-w-[95vw] sm:max-w-4xl max-h-[30vh] sm:max-h-[60vh]"
           >
             <div className="absolute bottom-0 left-0">
               <div className="flex flex-col items-start justify-end gap-2 pb-2 md:pb-4 lg:pb-8 md:gap-4 lg:gap-8 h-full px-2 sm:px-4">
