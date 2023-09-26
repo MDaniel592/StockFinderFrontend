@@ -192,7 +192,7 @@ export default function EnhancedTable({ data, headCells }) {
                           <div className="flex items-center">
                             <a
                               href={product_url}
-                              className="ml-5 hover:text-blue-500 hover:underline hover:decoration-blue-500"
+                              className="ml-5 text-white hover:text-blue-500 hover:underline hover:decoration-blue-500"
                             >
                               {row.name}
                             </a>
@@ -200,7 +200,7 @@ export default function EnhancedTable({ data, headCells }) {
                         </div>
                       </TableCell>
                       <TableCell
-                        className="table-text-xs"
+                        className="text-white table-text-xs"
                         component="th"
                         id={`row-data-cell-original_price-${index}`}
                         scope="row"
