@@ -26,9 +26,6 @@ export async function getServerSideProps(context) {
   const res = await fetch(
     process.env.BACKEND_API_URL + '/get_build/' + build_uuid
   )
-  if (res.ok) {
-    data = await res.json()
-  }
-
-  return { props: { data, title, build_uuid } }
+  if (res.ok) data = await res.json()
+  return { props: { data, build_uuid } }
 }
