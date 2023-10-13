@@ -34,7 +34,7 @@ export default function ProductsRows({ data, discount }) {
                   loading="lazy"
                   alt={row['image']}
                   src={`https://images.stockfinder.tech/${row['image']}`}
-                  className="rounded-md m-auto object-cover"
+                  className="w-20 rounded-md m-auto object-cover"
                   onError={onImageNotLoadedError}
                 />
                 <div className="w-64 grid place-content-evenly">
@@ -45,8 +45,9 @@ export default function ProductsRows({ data, discount }) {
                   </div>
                   <div>
                     <p className="font-sans antialiased text-xs font-semibold">
-                      {row['shop'].replace(' Reacondicionados', '')} -
-                      {row['price']} €
+                      {`${row['shop'].replace(' Reacondicionados', '')} - ${
+                        row['price']
+                      } €`}
                     </p>
                   </div>
                   <div>

@@ -434,9 +434,8 @@ export default function EnhancedTable({
                                 open ? 'mouse-over-popover' : undefined
                               }
                               src={imageUrl}
-                              loading="lazy"
-                              width={50}
-                              height={50}
+                              width={300}
+                              height={300}
                               style={{ width: 'auto', height: 'auto' }}
                               alt={row['uuid']}
                               className="h-8 w-8 rounded-md"
@@ -467,9 +466,8 @@ export default function EnhancedTable({
                               elevation={0}
                             >
                               <Image
-                                loading="lazy"
-                                width={200}
-                                height={200}
+                                width={300}
+                                height={300}
                                 style={{ width: 'auto', height: 'auto' }}
                                 alt={row['uuid']}
                                 src={displayIMG}
