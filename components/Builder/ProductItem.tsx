@@ -32,7 +32,12 @@ export default function ProductItem({ product }: { product: ProductInfo }) {
         </Link>
       </div>
       <div className="text-center grid grid-cols-1 items-center">
-        <p className="text-xl font-semibold">{product.price} €</p>
+        <p className="text-xl font-semibold">
+          {product.price.toLocaleString('es-ES', {
+            style: 'currency',
+            currency: 'EUR'
+          })}
+        </p>
       </div>
     </article>
   )

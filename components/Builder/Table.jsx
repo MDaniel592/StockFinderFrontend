@@ -146,8 +146,8 @@ export default function EnhancedTable({ data, headCells }) {
                       >
                         <div className="flex">
                           <Image
-                            width={50}
-                            height={50}
+                            width={300}
+                            height={300}
                             style={{ width: 'auto', height: 'auto' }}
                             loading="lazy"
                             alt={row['uuid']}

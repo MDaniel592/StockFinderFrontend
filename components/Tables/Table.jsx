@@ -502,7 +502,7 @@ export default function EnhancedTable({
             sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}
             rowsPerPageOptions={[20, 50, 100]}
             component="div"
-            className="table-pagination"
+            className="table-pagination text-white"
             count={rows.length}
             rowsPerPage={rowsPerPage}
             page={page > 0 && rows.length < rowsPerPage * page ? 0 : page}

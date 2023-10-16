@@ -34,7 +34,7 @@ export default function ProductsRows({ data, discount }) {
                   loading="lazy"
                   alt={row['image']}
                   src={`https://images.stockfinder.tech/${row['image']}`}
-                  className="w-20 rounded-md m-auto object-cover"
+                  className="w-20 max-h-20 rounded-md m-auto object-cover"
                   onError={onImageNotLoadedError}
                 />
                 <div className="w-64 grid place-content-evenly">

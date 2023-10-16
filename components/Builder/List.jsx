@@ -40,8 +40,8 @@ export default function List({ data }) {
             >
               <div className="flex items-center gap-2">
                 <Image
-                  width={50}
-                  height={50}
+                  width={300}
+                  height={300}
                   style={{ width: 'auto', height: 'auto' }}
                   alt={value['name']}
                   loading="lazy"

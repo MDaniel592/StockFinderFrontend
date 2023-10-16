@@ -68,7 +68,7 @@ const MemoProductDropdownListItem = React.memo(
       >
         {product.availabilities.map(availability => (
           <option value={availability.shopName} key={Math.random()}>
-            {availability.shopName} -
+            {availability.shopName} -{' '}
             {availability.price.toLocaleString('es-ES', {
               style: 'currency',
               currency: 'EUR'
